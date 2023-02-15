@@ -1,5 +1,4 @@
-
-#include <Arduino.h>
+#include "define.h"
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
 #include "define.h"
