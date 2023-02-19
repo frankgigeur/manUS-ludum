@@ -3,6 +3,11 @@
 #include <Adafruit_PWMServoDriver.h>
 #include "define.h"
 
+#define finger1_ID 7                // moteur ID du doigt 1
+#define angle_traction 59           // angle en deg pour plier
+#define cnt_SERVO_reach 235         // reach
+#define cnt_SERVO_half_reach 170    // half reach 
+
 // called this way, it uses the default address 0x40
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
@@ -19,10 +24,10 @@ void setup() {
 
 
 void loop() {
+
   delay(2000);
-  pwm.setPWM(6, 0, HS422_CNT_SERVO_MAX);
-  pwm.setPWM(7, 0, HS422_CNT_SERVO_MAX);
+  pwm.setPWM(finger1_ID, 0, HS422_CNT_SERVO_MIN);
   delay(2000);
-  pwm.setPWM(6, 0, HS422_CNT_SERVO_MIN);
-  pwm.setPWM(7, 0, HS422_CNT_SERVO_MIN);
+  pwm.setPWM(finger1_ID, 0, cnt_SERVO_reach);
+
 }
