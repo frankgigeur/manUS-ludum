@@ -19,7 +19,11 @@ void setup() {
   pwm.setOscillatorFrequency(PCA9685_OSC_FREQ);
   pwm.setPWMFreq(HS422_SERVO_FREQ);
  
-  delay(10);
+  pwm.setPWM(finger1_ID, 0, HS422_CNT_SERVO_MIN);
+  pwm.setPWM(6, 0, HS422_CNT_SERVO_MIN);
+  delay(2000);
+  pwm.setPWM(finger1_ID, 0, cnt_SERVO_reach);
+  pwm.setPWM(6, 0, cnt_SERVO_reach);
 }
 
 
