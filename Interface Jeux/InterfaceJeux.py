@@ -68,7 +68,7 @@ class UiManUSludumInterface(object):
         self.boutonLancementJeux = QtWidgets.QPushButton(self.header)
         self.boutonLancementJeux.setGeometry(QtCore.QRect(10, 10, 700, 50))
         self.boutonLancementJeux.setObjectName("boutonLancementJeux")
-        self.boutonLancementJeux.clicked.connect(self.decompte)
+        self.boutonLancementJeux.clicked.connect(self.debut_decompte)
 
         # Bouton qui fait apparaître un popup qui explique comment jouer
         self.boutonInfo = QtWidgets.QPushButton(self.header)
@@ -265,12 +265,13 @@ class UiManUSludumInterface(object):
         self.camHolder.setUsesScrollButtons(False)
         self.camHolder.setObjectName("camHolder")
 
-        # self.available_cameras = QCameraInfo.availableCameras()
-        # self.viewfinder = QCameraViewfinder()
-        # self.viewfinder.show()
+        # Initialisation de la caméra
+        self.available_cameras = QCameraInfo.availableCameras()
+        self.viewfinder = QCameraViewfinder()
+        self.viewfinder.show()
 
-        # self.camHolder.addTab(self.viewfinder, self.available_cameras[0].description())
-        # self.select_camera(0)
+        self.camHolder.addTab(self.viewfinder, self.available_cameras[0].description())
+        self.select_camera(0)
 
         # Initialisation de la section du décompte
         self.decompte = QtWidgets.QGroupBox(self.centralwidget)
@@ -347,8 +348,13 @@ class UiManUSludumInterface(object):
 
         msg.exec_()
 
-    def countdown(self):
+    def texte_decompte(self):
+        """
+        Fonction qui change le texte de l'étiquette de décompte selon
+        l'interval de temps choisi au setup
 
+        :return:
+        """
         _translate = QtCore.QCoreApplication.translate
 
         if self.start:
@@ -372,12 +378,22 @@ class UiManUSludumInterface(object):
                 self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "Ciseaux"))
                 self.count = self.count - 1
 
-    def decompte(self):
+    def debut_decompte(self):
+        """
+        Fonction qui débute le chronomètre du décompte
+
+        :return:
+        """
         self.start = True
         self.count = self.nbDecompte
 
     def select_camera(self, i):
+        """
+        Fonction qui sélectionne la caméra à utiliser parmi les connexions disponibles
 
+        :param i: indice de la caméra (on pourrait en connecter plusieurs)
+        :return:
+        """
         self.camera = QCamera(self.available_cameras[i])
         self.camera.setViewfinder(self.viewfinder)
 
@@ -399,7 +415,7 @@ if __name__ == "__main__":
 
     # Timer pour le décompte
     timer = QTimer()
-    timer.timeout.connect(ui.countdown)
+    timer.timeout.connect(ui.texte_decompte)
     timer.start(1000)
 
     sys.exit(app.exec_())
