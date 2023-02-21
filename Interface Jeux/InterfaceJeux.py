@@ -14,8 +14,8 @@ from PyQt5.QtCore import *
 from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 
-import serial as pyserial
-
+from CommWorker import CommWorker
+import time
 
 class UiManUSludumInterface(object):
 
@@ -31,12 +31,16 @@ class UiManUSludumInterface(object):
         :param ManUS_ludum_Interface:
         :return:
         """
+        self.commWorker = CommWorker(comPort="COM8")
+        self.commWorker.start()
+        self.commWorker.textReceived.connect(self.showCommMessage)
 
         # Initialisation de la fenêtre principale
         ManUS_ludum_Interface.setObjectName("ManUS_ludum_Interface")
         ManUS_ludum_Interface.resize(1620, 958)
         self.centralwidget = QtWidgets.QWidget(ManUS_ludum_Interface)
         self.centralwidget.setObjectName("centralwidget")
+
 
         # Initialisation de l'entête
         self.header = QtWidgets.QGroupBox(self.centralwidget)
@@ -111,16 +115,19 @@ class UiManUSludumInterface(object):
         self.boutonRobotRoche = QtWidgets.QPushButton(self.robot)
         self.boutonRobotRoche.setGeometry(QtCore.QRect(35, 160, 280, 90))
         self.boutonRobotRoche.setObjectName("boutonRobotRoche")
+        self.boutonRobotRoche.clicked.connect(lambda: self.commWorker.sendToArduino("R"))
 
         # Bouton qui indique à la main de jouer papier
         self.boutonRobotPapier = QtWidgets.QPushButton(self.robot)
         self.boutonRobotPapier.setGeometry(QtCore.QRect(35, 260, 280, 90))
         self.boutonRobotPapier.setObjectName("boutonRobotPapier")
+        self.boutonRobotPapier.clicked.connect(lambda: self.commWorker.sendToArduino("P"))
 
         # Bouton qui indique à la main de jouer ciseaux
         self.boutonRobotCiseaux = QtWidgets.QPushButton(self.robot)
         self.boutonRobotCiseaux.setGeometry(QtCore.QRect(35, 360, 280, 90))
         self.boutonRobotCiseaux.setObjectName("boutonRobotCiseaux")
+        self.boutonRobotCiseaux.clicked.connect(lambda: self.commWorker.sendToArduino("C"))
 
         # Bouton qui arrête la main sur appui
         self.boutonRobotAU = QtWidgets.QPushButton(self.robot)
@@ -258,12 +265,12 @@ class UiManUSludumInterface(object):
         self.camHolder.setUsesScrollButtons(False)
         self.camHolder.setObjectName("camHolder")
 
-        self.available_cameras = QCameraInfo.availableCameras()
-        self.viewfinder = QCameraViewfinder()
-        self.viewfinder.show()
+        # self.available_cameras = QCameraInfo.availableCameras()
+        # self.viewfinder = QCameraViewfinder()
+        # self.viewfinder.show()
 
-        self.camHolder.addTab(self.viewfinder, self.available_cameras[0].description())
-        self.select_camera(0)
+        # self.camHolder.addTab(self.viewfinder, self.available_cameras[0].description())
+        # self.select_camera(0)
 
         # Initialisation de la section du décompte
         self.decompte = QtWidgets.QGroupBox(self.centralwidget)
@@ -289,6 +296,10 @@ class UiManUSludumInterface(object):
         # Écriture des étiquettes et connexion des fenêtres
         self.retranslate_ui(ManUS_ludum_Interface)
         QtCore.QMetaObject.connectSlotsByName(ManUS_ludum_Interface)
+
+
+    def showCommMessage(self,messageReceived:str):
+        print(messageReceived)
 
     def retranslate_ui(self, ManUS_ludum_Interface):
         """
