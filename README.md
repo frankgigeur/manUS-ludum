@@ -32,8 +32,8 @@ Explication sur l'ouverture des fichiers et sur le branchement de l'électroniqu
 		* [Assemblage mécanique]
 		* [Assemblage électrique]
 * [Interface](/Interface%20Jeux#manUS-ludum)
-	* [Code de l'interface](/Interface%20Jeux#manUS-ludum)
-	* [Code de communication](/Interface%20Jeux#manUS-ludum)
+	* [Code de l'interface](/Interface%20Jeux/README.md#Comment-démarrer-linterface)
+	* [Code de communication](/Interface%20Jeux/README.md#Comment-fonctionne-la-communication)
 * [Vision]
 	* [Matériel nécessaire]
 	* [Faire un fichier read me pour l'implémentation du modèle]  
