@@ -7,3 +7,7 @@
 #define HS422_US_MAX  2563          // L'équivalent en us du compteur maximum pour le PWM 12bit du PCA9865 pour le servomoteur HS422 (180°).
 #define HS422_SERVO_FREQ 50         // Fréquence du PMW pour le servomoteur HS422.
 #define PCA9685_OSC_FREQ 25100401   // Fréquence d'oscillation du PCA9865 (Ajusté pour avoir une fréquence de 50Hz précisément).
+#define finger1_ID 7                // moteur ID du doigt 1
+#define angle_traction 59           // angle en deg pour plier
+#define cnt_SERVO_reach 235         // reach
+#define cnt_SERVO_half_reach 170    // half reach 
