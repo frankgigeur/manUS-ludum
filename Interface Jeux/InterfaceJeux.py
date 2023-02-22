@@ -31,7 +31,7 @@ class UiManUSludumInterface(object):
         :param ManUS_ludum_Interface:
         :return:
         """
-        self.commWorker = CommWorker(comPort="COM8")
+        self.commWorker = CommWorker(comPort="COM7")
         self.commWorker.start()
         self.commWorker.textReceived.connect(self.showCommMessage)
 
@@ -133,6 +133,7 @@ class UiManUSludumInterface(object):
         self.boutonRobotAU = QtWidgets.QPushButton(self.robot)
         self.boutonRobotAU.setGeometry(QtCore.QRect(35, 460, 280, 90))
         self.boutonRobotAU.setObjectName("boutonRobotAU")
+        self.boutonRobotAU.clicked.connect(lambda: self.commWorker.sendToArduino("A"))
 
         # Initialisation de la section de contrôle de l'humain
         self.humain = QtWidgets.QGroupBox(self.centralwidget)
