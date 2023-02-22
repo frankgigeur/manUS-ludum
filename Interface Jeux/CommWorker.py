@@ -18,7 +18,7 @@ class CommWorker(QThread):
         try:
             self.serial = pyserial.Serial(comPort,baudRate,timeout=0, rtscts=True)
             print("Serial port " + comPort + " opened  Baudrate " + str(baudRate))
-            self.waitForArduino()
+            #self.waitForArduino()
         except:
             self.connected = False
 
