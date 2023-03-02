@@ -30,9 +30,13 @@ void setup() {
 
 void loop() {
 
-  recvWithStartEndMarkers();
-  replyToUi();
+  // recvWithStartEndMarkers();
+  // replyToUi();
 
+  pwm.setPWM(finger1_ID, 0, HS422_CNT_SERVO_MIN);
+  delay(1000);  
+  pwm.setPWM(finger1_ID, 0, cnt_SERVO_reach);
+  delay(1000);  
 }
 
 void recvWithStartEndMarkers() {
