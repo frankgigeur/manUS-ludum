@@ -5,13 +5,14 @@
 Ajouter des instructions/liens
 
 ## Fabrication
-Ajouter instructions pour python 3.7 et autres résolutions de packages
+Fabrication
 
 ## Liste des matériaux et composantes
-Explication du fichier InterfaceJeux.py
+Liste des matériaux et composantes
 
 ## Assemblage mécanique
-Explication du fichier CommWorker.py
+Assemblage mécanique
 
 ## Assemblage électrique
-Explication du fichier CommWorker.py
+Assemblage électrique
+
