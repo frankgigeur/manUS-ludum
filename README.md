@@ -27,7 +27,7 @@ Explication sur l'ouverture des fichiers et sur le branchement de l'électroniqu
 ## Table des matières
 * [Main]
 * [Mécanique](/Mécanique#manUS-ludum)
-	* [Fichiers CAD](/Mécanique/README.md#Fichier-CAD)
+	* [Fichiers CAD](/Mécanique#Fichier-CAD)
 	* [Comment fabriquer ...](/Mécanique/README.md#Fabrication)
 		* [Liste des matériaux et composantes](/Mécanique/README.md#Liste-des-matériaux-et-composantes)
 		* [Assemblage mécanique](/Mécanique/README.md#Assemblage-mécanique)
