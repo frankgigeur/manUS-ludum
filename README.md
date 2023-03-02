@@ -26,6 +26,7 @@ Explication sur l'ouverture des fichiers et sur le branchement de l'électroniqu
 
 ## Table des matières
 * [Main]
+* [Mécanique]
 	* [Fichiers CAD]
 	* [Comment fabriquer ...]
 		* [Liste des matériaux et composantes]
