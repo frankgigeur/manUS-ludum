@@ -15,6 +15,8 @@ from PyQt5.QtMultimedia import *
 from PyQt5.QtMultimediaWidgets import *
 
 from CommWorker import CommWorker
+from algoRPC import AlgoRPC
+
 
 class UiManUSludumInterface(object):
 
@@ -33,6 +35,9 @@ class UiManUSludumInterface(object):
         self.commWorker = CommWorker(comPort="COM8")
         self.commWorker.start()
         self.commWorker.textReceived.connect(self.showCommMessage)
+
+        self.visionRPC = AlgoRPC()
+        self.visionRPC.start()
 
         # Initialisation de la fenêtre principale
         ManUS_ludum_Interface.setObjectName("ManUS_ludum_Interface")
@@ -266,12 +271,12 @@ class UiManUSludumInterface(object):
         self.camHolder.setObjectName("camHolder")
 
         # Initialisation de la caméra
-        self.available_cameras = QCameraInfo.availableCameras()
-        self.viewfinder = QCameraViewfinder()
-        self.viewfinder.show()
+        #self.available_cameras = QCameraInfo.availableCameras()
+        #self.viewfinder = QCameraViewfinder()
+        #self.viewfinder.show()
 
-        self.camHolder.addTab(self.viewfinder, self.available_cameras[0].description())
-        self.select_camera(0)
+        #self.camHolder.addTab(self.viewfinder, self.available_cameras[0].description())
+        #self.select_camera(0)
 
         # Initialisation de la section du décompte
         self.decompte = QtWidgets.QGroupBox(self.centralwidget)
