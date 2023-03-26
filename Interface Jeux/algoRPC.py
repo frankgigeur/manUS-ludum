@@ -21,7 +21,7 @@ from scipy import stats as st
 
 from collections import deque
 
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread
 
 """
 
@@ -315,14 +315,14 @@ cv2.destroyAllWindows()
 
 
 class AlgoRPC(QThread):
-    signal = pyqtSignal()
+    frameToDisplay = pyqtSignal(np.ndarray)
 
     model = load_model("rps4.h5")
 
     # This list will be used to map probabilities to class names, Label names are in alphabetical order.
     label_names = ['nothing', 'paper', 'rock', 'scissor']
 
-    def findout_winner(user_move, Computer_move):
+    def findout_winner(self, user_move, Computer_move):
         # All logic below is self-explanatory
 
         if user_move == Computer_move:
@@ -346,41 +346,29 @@ class AlgoRPC(QThread):
         elif user_move == "paper" and Computer_move == "scissor":
             return "Computer"
 
-    def show_winner(user_score, computer_score):
+    def send_winner(self, user_score, computer_score):
         if user_score > computer_score:
-            img = cv2.imread("images/youwin.jpg")
+            print("User")
 
         elif user_score < computer_score:
-            img = cv2.imread("images/comwins.jpg")
+            print("ManUS")
 
         else:
-            img = cv2.imread("images/draw.jpg")
+            print("Draw")
 
-        cv2.putText(img, "Press 'ENTER' to play again, else exit",
-                (150, 530), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 3, cv2.LINE_AA)
-
-        cv2.imshow("Rock Paper Scissors", img)
-
-        # If enter is pressed.
-        k = cv2.waitKey(0)
-
-        # If the user presses 'ENTER' key then return TRUE, otherwise FALSE
-        if k == 13:
-            return True
-
-        else:
-            return False
+        return True
 
     cap = cv2.VideoCapture(0)
     box_size = 234
     width = int(cap.get(3))
 
     # Specify the number of attempts you want. This means best of 5.
-    attempts = 5
+    attempts = 3
 
     # Initially the moves will be `nothing`
     computer_move_name = "nothing"
     final_user_move = "nothing"
+    user_move = "nothing"
 
     # All scores are 0 at the start.
     computer_score, user_score = 0, 0
@@ -395,7 +383,7 @@ class AlgoRPC(QThread):
     total_attempts = attempts
 
     # We will only consider predictions having confidence above this threshold.
-    confidence_threshold = 0.85
+    confidence_threshold = 0.70
 
     # Instead of working on a single prediction, we will take the mode of 5 predictions by using a deque object
     # This way even if we face a false positive, we would easily ignore it
@@ -408,6 +396,7 @@ class AlgoRPC(QThread):
         QThread.__init__(self)
 
     def run(self):
+
         while True:
 
             ret, frame = self.cap.read()
@@ -416,8 +405,6 @@ class AlgoRPC(QThread):
                 break
 
             frame = cv2.flip(frame, 1)
-
-            cv2.namedWindow("Rock Paper Scissors", cv2.WINDOW_NORMAL)
 
             # extract the region of image within the user rectangle
             roi = frame[5: self.box_size - 5, self.width - self.box_size + 5: self.width - 5]
@@ -431,7 +418,7 @@ class AlgoRPC(QThread):
             move_code = np.argmax(pred[0])
 
             # Get the class name of the predicted class
-            user_move = self.label_names[move_code]
+            self.user_move = self.label_names[move_code]
 
             # Get the confidence of the predicted class
             prob = np.max(pred[0])
@@ -440,11 +427,11 @@ class AlgoRPC(QThread):
             if prob >= self.confidence_threshold:
 
                 # Now add the move to deque list from left
-                self.de.appendleft(user_move)
+                self.de.appendleft(self.user_move)
 
                 # Get the mode i.e. which class has occurred more frequently in the last 5 moves.
                 try:
-                    final_user_move = st.mode(self.de, keepdims=True)[0][0]
+                    self.final_user_move = str(st.mode(self.de, keepdims=True)[0][0])
 
                 except StatisticsError:
                     print('Stats error')
@@ -454,81 +441,74 @@ class AlgoRPC(QThread):
                 # Basically the hand_inside variable is helping us to not repeatedly predict during the loop
                 # So now the user has to take his hands out of the box for every new prediction.
 
-                if final_user_move != "nothing" and hand_inside == False:
+                if self.final_user_move != "nothing" and self.hand_inside == False:
 
                     # Set hand inside to True
-                    hand_inside = True
+                    self.hand_inside = True
 
                     # Get Computer's move and then get the winner.
-                    computer_move_name = choice(['rock', 'paper', 'scissor'])
-                    winner = self.findout_winner(final_user_move, computer_move_name)
+                    self.computer_move_name = choice(['rock', 'paper', 'scissor'])
+                    winner = self.findout_winner(str(self.final_user_move), self.computer_move_name)
 
                     # Subtract one attempt
-                    total_attempts -= 1
+                    self.total_attempts -= 1
 
                     # If winner is computer then it gets points and vice versa.
                     # We're also changing the color of rectangle based on who wins the round.
 
                     if winner == "Computer":
-                        computer_score += 1
-                        rect_color = (0, 0, 255)
+                        self.computer_score += 1
+                        self.rect_color = (0, 0, 255)
 
                     elif winner == "User":
-                        user_score += 1
-                        rect_color = (0, 250, 0)
+                        self.user_score += 1
+                        self.rect_color = (0, 250, 0)
 
                     elif winner == "Tie":
-                        rect_color = (255, 250, 255)
+                        self.rect_color = (255, 250, 255)
 
                     # If all the attempts are up then find our the winner
-                    if total_attempts == 0:
+                    if self.total_attempts == 0:
 
-                        play_again = self.show_winner(user_score, computer_score)
+                        play_again = self.send_winner(self.user_score, self.computer_score)
 
                         # If the user pressed Enter then restart the game by re-initializing all variables
                         if play_again:
-                            user_score, computer_score, total_attempts = 0, 0, self.attempts
+                            self.user_score, self.computer_score, self.total_attempts = 0, 0, self.attempts
 
                         # Otherwise quit the program.
                         else:
                             break
 
                 # If class is nothing then hand_inside becomes False
-                elif final_user_move == 'nothing':
-                    hand_inside = False
-                    rect_color = (255, 0, 0)
+                elif self.final_user_move == 'nothing':
+                    self.hand_inside = False
+                    self.rect_color = (255, 0, 0)
 
             # This is where all annotation is happening.
 
-            cv2.putText(frame, "Your Move: " + final_user_move,
+            cv2.putText(frame, "Your Move: " + self.final_user_move,
                 (420, 270), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
 
-            cv2.putText(frame, "Computer's Move: " + computer_move_name,
+            cv2.putText(frame, "Computer's Move: " + self.computer_move_name,
                 (2, 270), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
 
-            cv2.putText(frame, "Your Score: " + str(user_score),
+            cv2.putText(frame, "Your Score: " + str(self.user_score),
                 (420, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
-            cv2.putText(frame, "Computer Score: " + str(computer_score),
+            cv2.putText(frame, "Computer Score: " + str(self.computer_score),
                 (2, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
 
-            cv2.putText(frame, "Attempts left: {}".format(total_attempts), (190, 400), cv2.FONT_HERSHEY_COMPLEX, 0.7,
+            cv2.putText(frame, "Attempts left: {}".format(self.total_attempts), (190, 400), cv2.FONT_HERSHEY_COMPLEX, 0.7,
                 (100, 2, 255), 1, cv2.LINE_AA)
 
-            cv2.rectangle(frame, (self.width - self.box_size, 0), (self.width, self.box_size), rect_color, 2)
+            cv2.rectangle(frame, (self.width - self.box_size, 0), (self.width, self.box_size), self.rect_color, 2)
 
-            # Display the image
-            cv2.imshow("Rock Paper Scissors", frame)
-
-            # Exit if 'q' is pressed
-            k = cv2.waitKey(10)
-            if k == ord('q'):
-                break
+            self.frameToDisplay.emit(frame)
+            self.msleep(1000//60)
 
     def kill(self):
-        self.terminate()
-        # Release the camera and destroy all windows.
         self.cap.release()
-        cv2.destroyAllWindows()
+        self.terminate()
 
 """
 

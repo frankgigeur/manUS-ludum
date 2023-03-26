@@ -17,6 +17,8 @@ from PyQt5.QtMultimediaWidgets import *
 from CommWorker import CommWorker
 from algoRPC import AlgoRPC
 
+import cv2
+
 
 class UiManUSludumInterface(object):
 
@@ -32,12 +34,6 @@ class UiManUSludumInterface(object):
         :param ManUS_ludum_Interface:
         :return:
         """
-        self.commWorker = CommWorker(comPort="COM8")
-        self.commWorker.start()
-        self.commWorker.textReceived.connect(self.showCommMessage)
-
-        self.visionRPC = AlgoRPC()
-        self.visionRPC.start()
 
         # Initialisation de la fenêtre principale
         ManUS_ludum_Interface.setObjectName("ManUS_ludum_Interface")
@@ -45,6 +41,36 @@ class UiManUSludumInterface(object):
         self.centralwidget = QtWidgets.QWidget(ManUS_ludum_Interface)
         self.centralwidget.setObjectName("centralwidget")
 
+        # Thread de communication
+        self.commWorker = CommWorker(comPort="COM8")
+        self.commWorker.start()
+        self.commWorker.textReceived.connect(self.showCommMessage)
+
+        # Thread de vision et algorithme
+        self.visionRPC = AlgoRPC()
+        self.visionRPC.frameToDisplay.connect(self.rafraichirCam)
+        self.visionRPC.start()
+
+        # Initialisation de la section de la caméra
+        self.camera = QtWidgets.QGroupBox(self.centralwidget)
+        self.camera.setGeometry(QtCore.QRect(730, 85, 880, 610))
+        self.camera.setObjectName("camera")
+
+        # Widget qui contient la caméra
+        self.camHolder = QtWidgets.QTabWidget(self.camera)
+        self.camHolder.setGeometry(QtCore.QRect(10, 10, 860, 590))
+        self.camHolder.setTabPosition(QtWidgets.QTabWidget.South)
+        self.camHolder.setTabShape(QtWidgets.QTabWidget.Rounded)
+        self.camHolder.setUsesScrollButtons(False)
+        self.camHolder.setObjectName("camHolder")
+
+        self.tab = QtWidgets.QWidget()
+        self.videoimage = QtWidgets.QLabel(self.tab)
+        self.videoimage.setGeometry(QtCore.QRect(10, 10, 860, 590))
+
+        self.available_cameras = QCameraInfo.availableCameras()
+
+        self.camHolder.addTab(self.videoimage, self.available_cameras[0].description())
 
         # Initialisation de l'entête
         self.header = QtWidgets.QGroupBox(self.centralwidget)
@@ -235,7 +261,6 @@ class UiManUSludumInterface(object):
         self.statsRoche.setObjectName("statsRoche")
 
         # Texte des stats pourcentage de papier (label)
-
         self.statsPapier = QtWidgets.QLabel(self.statistiques)
         self.statsPapier.setGeometry(QtCore.QRect(335, 200, 125, 50))
         self.statsPapier.setObjectName("statsPapier")
@@ -256,27 +281,6 @@ class UiManUSludumInterface(object):
         self.pourcentCiseaux.setGeometry(QtCore.QRect(490, 200, 75, 50))
         self.pourcentCiseaux.setSmallDecimalPoint(False)
         self.pourcentCiseaux.setObjectName("pourcentCiseaux")
-
-        # Initialisation de la section de la caméra
-        self.camera = QtWidgets.QGroupBox(self.centralwidget)
-        self.camera.setGeometry(QtCore.QRect(730, 85, 880, 610))
-        self.camera.setObjectName("camera")
-
-        # Widget qui contient la caméra
-        self.camHolder = QtWidgets.QTabWidget(self.camera)
-        self.camHolder.setGeometry(QtCore.QRect(10, 10, 860, 590))
-        self.camHolder.setTabPosition(QtWidgets.QTabWidget.South)
-        self.camHolder.setTabShape(QtWidgets.QTabWidget.Rounded)
-        self.camHolder.setUsesScrollButtons(False)
-        self.camHolder.setObjectName("camHolder")
-
-        # Initialisation de la caméra
-        #self.available_cameras = QCameraInfo.availableCameras()
-        #self.viewfinder = QCameraViewfinder()
-        #self.viewfinder.show()
-
-        #self.camHolder.addTab(self.viewfinder, self.available_cameras[0].description())
-        #self.select_camera(0)
 
         # Initialisation de la section du décompte
         self.decompte = QtWidgets.QGroupBox(self.centralwidget)
@@ -304,8 +308,14 @@ class UiManUSludumInterface(object):
         QtCore.QMetaObject.connectSlotsByName(ManUS_ludum_Interface)
 
 
-    def showCommMessage(self,messageReceived:str):
+    def showCommMessage(self, messageReceived:str):
         print(messageReceived)
+
+    def rafraichirCam(self, frametodisplay):
+        image = QtGui.QImage(frametodisplay, frametodisplay.shape[1], \
+                             frametodisplay.shape[0], frametodisplay.shape[1] * 3, QtGui.QImage.Format_RGB888).rgbSwapped()
+        pix = QtGui.QPixmap(image)
+        self.videoimage.setPixmap(pix)
 
     def retranslate_ui(self, ManUS_ludum_Interface):
         """

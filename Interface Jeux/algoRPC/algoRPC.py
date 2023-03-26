@@ -404,6 +404,8 @@ smooth_factor = 5
 # Our initial deque list will have 'nothing' repeated 5 times.
 de = deque(['nothing'] * 5, maxlen=smooth_factor)
 
+window = cv2.namedWindow("Rock Paper Scissors", cv2.WINDOW_NORMAL)
+
 while True:
 
     ret, frame = cap.read()
@@ -413,7 +415,7 @@ while True:
 
     frame = cv2.flip(frame, 1)
 
-    cv2.namedWindow("Rock Paper Scissors", cv2.WINDOW_NORMAL)
+    #cv2.namedWindow("Rock Paper Scissors", cv2.WINDOW_NORMAL)
 
     # extract the region of image within the user rectangle
     roi = frame[5: box_size - 5, width - box_size + 5: width - 5]
