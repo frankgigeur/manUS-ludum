@@ -316,6 +316,10 @@ cv2.destroyAllWindows()
 
 class AlgoRPC(QThread):
     frameToDisplay = pyqtSignal(np.ndarray)
+    gameWinner = pyqtSignal(str)
+    roundData = pyqtSignal(list)
+
+    returnList = []
 
     model = load_model("rps4.h5")
 
@@ -324,37 +328,60 @@ class AlgoRPC(QThread):
 
     def findout_winner(self, user_move, Computer_move):
         # All logic below is self-explanatory
+        self.returnList.append(user_move)
+        self.returnList.append(Computer_move)
 
         if user_move == Computer_move:
+            self.returnList.append("Tie")
+            self.roundData.emit(self.returnList)
+            self.returnList.clear()
             return "Tie"
 
         elif user_move == "rock" and Computer_move == "scissor":
+            self.returnList.append("User")
+            self.roundData.emit(self.returnList)
+            self.returnList.clear()
             return "User"
 
         elif user_move == "rock" and Computer_move == "paper":
+            self.returnList.append("ManUS")
+            self.roundData.emit(self.returnList)
+            self.returnList.clear()
             return "Computer"
 
         elif user_move == "scissor" and Computer_move == "rock":
+            self.returnList.append("ManUS")
+            self.roundData.emit(self.returnList)
+            self.returnList.clear()
             return "Computer"
 
         elif user_move == "scissor" and Computer_move == "paper":
+            self.returnList.append("User")
+            self.roundData.emit(self.returnList)
+            self.returnList.clear()
             return "User"
 
         elif user_move == "paper" and Computer_move == "rock":
+            self.returnList.append("User")
+            self.roundData.emit(self.returnList)
+            self.returnList.clear()
             return "User"
 
         elif user_move == "paper" and Computer_move == "scissor":
+            self.returnList.append("ManUS")
+            self.roundData.emit(self.returnList)
+            self.returnList.clear()
             return "Computer"
 
     def send_winner(self, user_score, computer_score):
         if user_score > computer_score:
-            print("User")
+            self.gameWinner.emit("u")
 
         elif user_score < computer_score:
-            print("ManUS")
+            self.gameWinner.emit("m")
 
         else:
-            print("Draw")
+            self.gameWinner.emit("d")
 
         return True
 
@@ -490,21 +517,21 @@ class AlgoRPC(QThread):
             cv2.putText(frame, "Your Move: " + self.final_user_move,
                 (420, 270), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
 
-            cv2.putText(frame, "Computer's Move: " + self.computer_move_name,
-                (2, 270), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
+            #cv2.putText(frame, "Computer's Move: " + self.computer_move_name,
+            #    (2, 270), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
 
-            cv2.putText(frame, "Your Score: " + str(self.user_score),
-                (420, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
-            cv2.putText(frame, "Computer Score: " + str(self.computer_score),
-                (2, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
+            #cv2.putText(frame, "Your Score: " + str(self.user_score),
+            #    (420, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
+            #cv2.putText(frame, "Computer Score: " + str(self.computer_score),
+            #    (2, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
 
-            cv2.putText(frame, "Attempts left: {}".format(self.total_attempts), (190, 400), cv2.FONT_HERSHEY_COMPLEX, 0.7,
+            cv2.putText(frame, "Attempts left: {}".format(self.total_attempts), (25, 50), cv2.FONT_HERSHEY_COMPLEX, 0.7,
                 (100, 2, 255), 1, cv2.LINE_AA)
 
             cv2.rectangle(frame, (self.width - self.box_size, 0), (self.width, self.box_size), self.rect_color, 2)
 
             self.frameToDisplay.emit(frame)
-            self.msleep(1000//60)
+            self.msleep(1000//120)
 
     def kill(self):
         self.cap.release()
