@@ -1,7 +1,6 @@
 #include "define.h"
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
-#include "define.h"
 
 void roche();
 void papier();
@@ -19,7 +18,8 @@ void recvWithStartEndMarkers() ;
 void setup() {
 
   Serial.begin(115200);
-  Serial.println("<Arduino is ready>");
+
+  //Serial.println("<Arduino is ready>");
 
   pwm.begin();
   pwm.setOscillatorFrequency(PCA9685_OSC_FREQ);
@@ -30,13 +30,13 @@ void setup() {
 
 void loop() {
 
-  // recvWithStartEndMarkers();
-  // replyToUi();
+  recvWithStartEndMarkers();
+  replyToUi();
 
-  pwm.setPWM(finger1_ID, 0, HS422_CNT_SERVO_MIN);
-  delay(1000);  
-  pwm.setPWM(finger1_ID, 0, cnt_SERVO_reach);
-  delay(1000);  
+  //pwm.setPWM(finger1_ID, 0, HS422_CNT_SERVO_MIN);
+  //delay(1000);  
+  //pwm.setPWM(finger1_ID, 0, cnt_SERVO_reach);
+  //(1000);  
 }
 
 void recvWithStartEndMarkers() {
@@ -44,26 +44,25 @@ void recvWithStartEndMarkers() {
     static byte ndx = 0;
     char startMarker = '<';
     char endMarker = '>';
-    char rc;
+    char lastReadChar;
     while (Serial.available() > 0 && newData == false) {
-        rc = Serial.read();
-        if (recvInProgress == true) {
-            if (rc != endMarker) {
-                receivedChars[ndx] = rc;
+        lastReadChar = Serial.read();
+        if (recvInProgress) {
+            if (lastReadChar != endMarker) {
+                receivedChars[ndx] = lastReadChar;
                 ndx++;
                 if (ndx >= numChars) {
                     ndx = numChars - 1;
                 }
             }
             else {
-                receivedChars[ndx] = '\0'; // terminate the string                recvInProgress = false;
-                Serial.println("receivedendmarker");
+                receivedChars[ndx] = '\0'; // terminate the string
+                recvInProgress = false;
                 ndx = 0;
                 newData = true;
             }
         }
-        else if (rc == startMarker) {
-            Serial.println("receivedstartmarker");
+        else if (lastReadChar == startMarker) {
             recvInProgress = true;
         }
     }

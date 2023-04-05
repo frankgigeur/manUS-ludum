@@ -10,4 +10,4 @@
 #define finger1_ID 7                // moteur ID du doigt 1
 #define angle_traction 59           // angle en deg pour plier
 #define cnt_SERVO_reach 235         // reach
-#define cnt_SERVO_half_reach 170    // half reach 
+#define cnt_SERVO_half_reach 170    // half reach
