@@ -321,7 +321,7 @@ class AlgoRPC(QThread):
 
     returnList = []
 
-    model = load_model("rps4.h5")
+    model = load_model("rps4_FIRST.h5")
 
     # This list will be used to map probabilities to class names, Label names are in alphabetical order.
     label_names = ['nothing', 'paper', 'rock', 'scissor']
@@ -386,8 +386,9 @@ class AlgoRPC(QThread):
         return True
 
     cap = cv2.VideoCapture(0)
-    box_size = 234
-    width = int(cap.get(3))
+    box_size = 234  # ne pas changer, sinon ça crash...
+
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))    # 640
 
     # Specify the number of attempts you want. This means best of 5.
     attempts = 3

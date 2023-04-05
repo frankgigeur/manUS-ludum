@@ -346,11 +346,13 @@ class UiManUSludumInterface(object):
 
     def updateWinnerStats(self, gameWinner: str):
         if gameWinner == "u":
-            self.Humanwin += 1
-            self.nbHumWin.display(self.Humanwin)
+            #self.Humanwin += 1
+            #self.nbHumWin.display(self.Humanwin)
+            pass
         elif gameWinner == "m":
-            self.AIwin += 1
-            self.nbAiWin.display(self.AIwin)
+            #self.AIwin += 1
+            #self.nbAiWin.display(self.AIwin)
+            pass
         else:
             pass
 
@@ -377,8 +379,12 @@ class UiManUSludumInterface(object):
 
         if roundDataList[2] == "User":
             self.gagnantManche.setText("Vous")
+            self.Humanwin += 1
+            self.nbHumWin.display(self.Humanwin)
         elif roundDataList[2] == "ManUS":
             self.gagnantManche.setText("ManUS")
+            self.AIwin += 1
+            self.nbAiWin.display(self.AIwin)
         elif roundDataList[2] == "Tie":
             self.gagnantManche.setText("Égalité")
 
@@ -514,4 +520,4 @@ if __name__ == "__main__":
     timer.timeout.connect(ui.texte_decompte)
     timer.start(1000)
 
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

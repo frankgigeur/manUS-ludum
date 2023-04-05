@@ -7,14 +7,14 @@ import matplotlib.pyplot as plt
 import time
 
 import tensorflow as tf
-# from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Model, load_model
-# from tensorflow.keras.layers import Dense, MaxPool2D, Dropout, Flatten, Conv2D, GlobalAveragePooling2D, Activation
-# from tensorflow.keras.optimizers import Adam
-# from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.layers import Dense, MaxPool2D, Dropout, Flatten, Conv2D, GlobalAveragePooling2D, Activation
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.utils import to_categorical
 
-# from sklearn.model_selection import train_test_split
-# from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 
 from random import choice, shuffle
 from scipy import stats as st
@@ -23,7 +23,58 @@ from collections import deque
 
 from PyQt5.QtCore import QThread, pyqtSignal
 
+# entraînement du modèle
 """
+model = load_model("rps4.h5")
+label_names = ['nothing', 'paper', 'rock', 'scissor']
+
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+box_size = 234
+width = int(cap.get(3))
+
+while True:
+
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    frame = cv2.flip(frame, 1)
+
+    cv2.rectangle(frame, (width - box_size, 0), (width, box_size), (0, 250, 150), 2)
+
+    cv2.namedWindow("Rock Paper Scissors", cv2.WINDOW_NORMAL)
+
+    roi = frame[5: box_size - 5, width - box_size + 5: width - 5]
+
+    # Normalize the image like we did in the preprocessing step, also convert float64 array.
+    roi = np.array([roi]).astype('float64') / 255.0
+
+    # Get model's prediction.
+    pred = model.predict(roi, verbose=0)
+
+    # Get the index of the target class.
+    target_index = np.argmax(pred[0])
+
+    # Get the probability of the target class
+    prob = np.max(pred[0])
+
+    # Show results
+    cv2.putText(frame, "prediction: {} {:.2f}%".format(label_names[np.argmax(pred[0])], prob * 100),
+                (10, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.90, (0, 0, 255), 2, cv2.LINE_AA)
+
+    cv2.imshow("Rock Paper Scissors", frame)
+
+    k = cv2.waitKey(1)
+    if k == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
+"""  # test de la détection
+
+# This list will be used to map probabilities to class names, Label names are in alphabetical order.
+label_names = ['nothing', 'paper', 'rock', 'scissor']
 
 def gather_data(num_samples):
     global rock, paper, scissor, nothing
@@ -263,63 +314,7 @@ plt.legend()
 
 plt.show()
 
-model.save("rps4.h5", overwrite=True)
-
-"""  # entraînement du modèle
-"""
-model = load_model("rps4.h5")
-label_names = ['nothing', 'paper', 'rock', 'scissor']
-
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-box_size = 234
-width = int(cap.get(3))
-
-while True:
-
-    ret, frame = cap.read()
-    if not ret:
-        break
-
-    frame = cv2.flip(frame, 1)
-
-    cv2.rectangle(frame, (width - box_size, 0), (width, box_size), (0, 250, 150), 2)
-
-    cv2.namedWindow("Rock Paper Scissors", cv2.WINDOW_NORMAL)
-
-    roi = frame[5: box_size - 5, width - box_size + 5: width - 5]
-
-    # Normalize the image like we did in the preprocessing step, also convert float64 array.
-    roi = np.array([roi]).astype('float64') / 255.0
-
-    # Get model's prediction.
-    pred = model.predict(roi, verbose=0)
-
-    # Get the index of the target class.
-    target_index = np.argmax(pred[0])
-
-    # Get the probability of the target class
-    prob = np.max(pred[0])
-
-    # Show results
-    cv2.putText(frame, "prediction: {} {:.2f}%".format(label_names[np.argmax(pred[0])], prob * 100),
-                (10, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.90, (0, 0, 255), 2, cv2.LINE_AA)
-
-    cv2.imshow("Rock Paper Scissors", frame)
-
-    k = cv2.waitKey(1)
-    if k == ord('q'):
-        break
-
-cap.release()
-cv2.destroyAllWindows()
-
-"""  # test de la détection
-
-
-model = load_model("rps4.h5")
-
-# This list will be used to map probabilities to class names, Label names are in alphabetical order.
-label_names = ['nothing', 'paper', 'rock', 'scissor']
+model.save("rps4_FIRST.h5", overwrite=True)
 
 
 def findout_winner(user_move, Computer_move):
@@ -346,6 +341,7 @@ def findout_winner(user_move, Computer_move):
     elif user_move == "paper" and Computer_move == "scissor":
         return "Computer"
 
+
 def show_winner(user_score, computer_score):
     if user_score > computer_score:
         img = cv2.imread("images/youwin.jpg")
@@ -370,6 +366,9 @@ def show_winner(user_score, computer_score):
 
     else:
         return False
+
+
+model = load_model("rps4_FIRST.h5")
 
 cap = cv2.VideoCapture(0)
 box_size = 234
