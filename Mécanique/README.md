@@ -2,15 +2,38 @@
 
 ## Fichier CAD
 ---
+Les fichiers suivants recensent les différents CAD nécessaire à la [fabriquation](#Fabrication) des composantes mécaniques du projet.
 
-Ajouter des instructions/liens
+CAD doigts <br>
+CAD paume <br>
+CAD poignet <br>
+CAD poulies servo, support moteur, poulies bearing et support arbre <br>
+CAD support supérieur <br>
+CAD base en acryliques <br>
+CAD ligaments <br>
 
 ## Fabrication
 ---
 ![image]()
-Le montage des composantes mécaniques nécessite l'accès à une découpeuse laser, une imprimante 3D et des outils électroniques tels qu'un fer à souder. 
+
+Le montage des composantes mécaniques nécessite l'accès à **une découpeuse laser**, **une imprimante 3D** et **d'un fer à souder**. 
 Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécaniques du projets selon les étapes suivantes:
-1. 
+
+1. Impression des doigts ( **x5** ) en PLA à l'aide d'une imprimante 3D.
+
+2. Impression de la paume et de son support de type poignet à l'aide d'une imprimante 3D.
+
+3. Impression des poulies de servo moteurs ( **x5** ), du support à moteur, des poulies inserés sur les paliers à billes ( **x12** ) et des supports à arbre ( **x4** ).
+
+4. Découper le support supérieur de la main en acrylique à l'aide d'une découpeuse laser.
+
+4. Découper les ligaments en nylon des différents doigts ( 2 par doigts ) à l'aide d'une découpeuse laser.
+
+5. Découper les ligaments en mica des différents doigts ( 3 par doigts ) à l'aide de ciseaux.
+
+6. Découper les fils de pêche ≈ 60cm ( **x10** ).
+
+7. Découper la base en acrylique du support de la main à l'aide d'une découpeuse laser. 
 
 ## Liste des matériaux et composantes
 ---
