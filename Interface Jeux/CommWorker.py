@@ -12,6 +12,12 @@ class CommWorker(QThread):
     connected = True
 
     def __init__(self, comPort:str = "COM1", baudRate:int = 115200):
+        """
+        Initialisation de la communication sérielle et du fil d'exécution
+
+        :param comPort:
+        :param baudRate:
+        """
         QThread.__init__(self)
 
         try:
@@ -21,6 +27,12 @@ class CommWorker(QThread):
             self.connected = False
 
     def run(self):
+        """
+        Boucle du fil, s'exécute en continu
+        Ici on lit les messages reçu de l'arduino et on notifie l'interface lors d'un changement
+
+        :return:
+        """
 
         while True:
             if self.connected:
@@ -29,10 +41,20 @@ class CommWorker(QThread):
                     self.textReceived.emit(f'arduinoreply : {arduinoReply}')
 
     def kill(self):
+        """
+        Fonction qui met fin au fil
+
+        :return:
+        """
         self.terminate()
 
     def sendToArduino(self,stringToSend):
-        # this adds the start- and end-markers before sending
+        """
+        Ajoute des marqueurs de début et de fin et envoit le message à l'arduino
+
+        :param stringToSend:
+        :return:
+        """
 
         print(stringToSend)
         stringWithMarkers = (self.startMarker)
@@ -41,9 +63,12 @@ class CommWorker(QThread):
 
         self.serial.write(stringWithMarkers.encode('utf-8'))  # encode needed for Python3
 
-    # ==================
-
     def recvLikeArduino(self):
+        """
+        Fonction permettant de lire la réponse de l'arduino
+
+        :return:
+        """
 
         if self.serial.inWaiting() > 0 and self.messageComplete == False:
             x = self.serial.read().decode("utf-8")  # decode needed for Python3
@@ -64,8 +89,5 @@ class CommWorker(QThread):
         else:
             return "XXX"
 
-# ====================
-# ====================
-# the program
 
 
