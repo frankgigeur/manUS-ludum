@@ -7,7 +7,10 @@ Ajouter des instructions/liens
 
 ## Fabrication
 ---
-Fabrication
+![image]()
+Le montage des composantes mécaniques nécessite l'accès à une découpeuse laser, une imprimante 3D et des outils électroniques tels qu'un fer à souder. 
+Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécaniques du projets selon les étapes suivantes:
+1. 
 
 ## Liste des matériaux et composantes
 ---
