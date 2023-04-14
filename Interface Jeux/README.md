@@ -22,12 +22,19 @@ Pour commencer, installez python sur votre machine.
 Ensuite, dans PyCharm, vous allez ajouter les librairies nécessaires à votre interpréteur en vous fiant aux étapes suivantes:
 
 1- À partir de l'onglet "File" sélectionner "Settings"
+
     ![image](https://user-images.githubusercontent.com/78489554/231928591-a2edf1bb-d9a8-4217-9c32-915a99832dc9.png)
+    
 2- Sous "Projet", sélectionner "Python Interpreter"
+
     ![image](https://user-images.githubusercontent.com/78489554/231928687-0256b4aa-de0a-4f44-8e68-8581bc0e26aa.png)
+    
 3- Choisir la version de python sur laquelle vous souhaitez installer vos librairies
+
+    ![image](https://user-images.githubusercontent.com/78489554/232065544-888e7708-50fd-4de8-8ea1-8e20b2ef9fbf.png) 
     
 4- En appuyant sur le bouton +, choissisez les librairies selon les requis énumérés ci-dessous et cliquez sur "Install Package"
+
     ![image](https://user-images.githubusercontent.com/78489554/231928832-087234c2-b583-47e6-889c-7f370e3d3fc6.png)
 
 ## Liste des librairies à installer
