@@ -3,11 +3,11 @@
 ## Fichier CAD
 Les fichiers suivants recensent les différents CAD nécessaire à la [fabrication](#Fabrication) des composantes mécaniques du projet.
 
-- [ ]  [`Doigts`](./CAD/Doigts//), [`Paume`](./CAD/Doigts//), [`Poignet`](./CAD/Doigts//) <br>
+- [ ]  [`Doigts`](./CAD/Doigts/), [`Paume`](./CAD/Paume%20et%20poignet//), [`Poignet`](./CAD/Paume%20et%20poignet//) <br>
 - [ ]  [`Ligaments`](./CAD/Doigts//) <br>
-- [ ]  [`Support moteur`](./CAD/Doigts//), [`Poulies`](./CAD/Doigts//) <br>
-- [ ]  [`Support arbre`](./CAD/Doigts//) <br>
-- [ ]  [`Support supérieur`](./CAD/Doigts//), [`Base`](./CAD/Doigts//) <br>
+- [ ]  [`Support moteur`](./CAD/Moteurs%20support%20et%20poulies/), [`Poulies moteurs`](./CAD/Moteurs%20support%20et%20poulies/) <br>
+- [ ]  [`Support arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/), [`Poulies arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/), [`Support supérieur`](./CAD/M%C3%A9canisme%20redirection%20fils/) <br>
+- [ ]  [`Base`](./CAD/Plaque%20montage/) <br>
 
 
 
