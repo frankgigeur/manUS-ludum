@@ -59,7 +59,15 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 
 ## Assemblage mécanique
-- [ ] Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
+Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
+
+### **Montage des doigts**
+Pour le montage des doigts, il est nécesaire d'insérer les ligamants aux points d'insertion anatomique selon la figure suivante:
+![exemple ligament](https://user-images.githubusercontent.com/92990215/232253651-91426f68-5720-48be-8098-8d6ce0e7ebe7.png)
+
+Pour se faire, faire fondre les vis m1.2 aux points cibles et viser par la suite celles-ci avec les ligaments de mica et de nylon. La figure suivante présente le nom des ligaments a utiliser selon la jonction entre les ossements.
+
+À noter que cette figure présente le montage de l'index, mais la même procédure s'applique pour tous les doigts.
 
 ## Assemblage électrique
 Assemblage électrique
