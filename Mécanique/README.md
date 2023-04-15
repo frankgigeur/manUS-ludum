@@ -1,19 +1,18 @@
 # Documentation-Mécanique
 
 ## Fichier CAD
----
 Les fichiers suivants recensent les différents CAD nécessaire à la [fabriquation](#Fabrication) des composantes mécaniques du projet.
 
 - [ ]  [`Doigts`](./CAD/Doigts//), [`Paume`](./CAD/Doigts//), [`Poignet`](./CAD/Doigts//) <br>
+- [ ]  [`Ligaments`](./CAD/Doigts//) <br>
 - [ ]  [`Support moteur`](./CAD/Doigts//), [`Poulies`](./CAD/Doigts//) <br>
 - [ ]  [`Support arbre`](./CAD/Doigts//) <br>
 - [ ]  [`Support supérieur`](./CAD/Doigts//), [`Base`](./CAD/Doigts//) <br>
-- [ ]  [`Ligaments`](./CAD/Doigts//) <br>
+
 
 
 ## Fabrication
----
-![image](C:\Users\nicob\Downloads\avant bras v1.png)
+![image]()
 
 Le montage des composantes mécaniques nécessite l'accès à **une découpeuse laser**, **une imprimante 3D** et **d'un fer à souder**. 
 Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécaniques du projets selon les étapes suivantes:
@@ -35,7 +34,6 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 7. Découper la base en acrylique du support de la main à l'aide d'une découpeuse laser. 
 
 ## Liste des matériaux et composantes
----
 ### **Mécanique**
 - [ ] &nbsp;Vis M1.2 x 3mm <br>
 - [ ] &nbsp;Vis M3 x 20mm <br>
@@ -60,10 +58,8 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 
 ## Assemblage mécanique
----
 Assemblage mécanique
 
 ## Assemblage électrique
----
 Assemblage électrique
 
