@@ -9,7 +9,10 @@
 - [ ] &nbsp;Câble USB type A/B <br>
 
 ## Assemblage électrique
-L'assemblage électrique du projet se résume aux étapes suivantes en se basant sur le schéma électrique suivant : ![Schema electrique](https://github.com/frankgigeur/manUS-ludum/blob/main/%C3%89lectrique/Schema_electrique.png)
+L'assemblage électrique du projet se résume aux étapes suivantes en se basant sur le schéma électrique suivant : 
+
+
+![Schema electrique](https://github.com/frankgigeur/manUS-ludum/blob/main/%C3%89lectrique/Schema_electrique.png)
 
 
 1. Connecter les fils 5V, GND, SDA, SCL de l'Arduino au module PCA9685 selon le schéma ci-haut à l'aide des connecteurs mâle-femelle.
