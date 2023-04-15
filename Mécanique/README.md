@@ -12,8 +12,8 @@ Les fichiers suivants recensent les différents CAD nécessaire à la [fabricati
 
 
 ## Fabrication
-![image](![avant bras v1](https://user-images.githubusercontent.com/92990215/232235138-21b190a2-598d-4fa9-a9e3-5926b624a40c.png)
-)
+![avant bras v1](https://user-images.githubusercontent.com/92990215/232235138-21b190a2-598d-4fa9-a9e3-5926b624a40c.png)
+
 
 Le montage des composantes mécaniques nécessite l'accès à **une découpeuse laser**, **une imprimante 3D** et **d'un fer à souder**. 
 Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécaniques du projets selon les étapes suivantes:
