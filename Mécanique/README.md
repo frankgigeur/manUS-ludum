@@ -58,9 +58,9 @@ Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](
 Pour le montage des doigts, il est nécesaire d'insérer les ligamants aux points d'insertion anatomique selon la figure suivante:
 ![exemple ligament](https://user-images.githubusercontent.com/92990215/232253651-91426f68-5720-48be-8098-8d6ce0e7ebe7.png)
 
-Pour se faire, faire fondre les vis m1.2 aux points cibles et viser par la suite celles-ci avec les ligaments de mica et de nylon. La figure suivante présente le nom des ligaments a utiliser selon la jonction entre les ossements.
+Pour se faire, faire fondre les vis m1.2 aux points cibles et visser par la suite celles-ci avec les ligaments de mica et de nylon. La figure suivante présente le nom des ligaments a utiliser selon la jonction entre les ossements.
 
 ![montage doigt index](https://user-images.githubusercontent.com/92990215/232254743-88300a97-06f6-4cc5-a2d7-a04028a713ea.png)
 
-À noter que cette figure présente le montage de l'index, mais la même procédure s'applique pour tous les doigts.
+La jonction MCPP est une superposition de ligaments de mica et de nylon, tandis que la jonction PPMP est seulement un ligament de nylon. Aussi, à noter que cette figure présente le montage de l'index, mais la même procédure s'applique pour tous les autres doigts.
 
