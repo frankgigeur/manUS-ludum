@@ -11,8 +11,8 @@
 
 /* pouce */
 #define HS422_po_inc_comp 480       // inclinaison complète
-#define HS422_po_inc_init 310       // inclinaison initial
-#define HS422_po_ext_comp 130       // extension complète
+#define HS422_po_inc_init 270       // inclinaison initial
+#define HS422_po_ext_comp 250      // extension complète
 
 /* index */
 #define HS422_in_inc_comp 320       // inclinaison complète
@@ -20,13 +20,13 @@
 #define HS422_in_ext_comp 95       // extension complète
 
 /* majeur */
-#define HS422_ma_inc_comp 480       // inclinaison complète
+#define HS422_ma_inc_comp 500       // inclinaison complète
 #define HS422_ma_inc_init 140       // inclinaison initial
 #define HS422_ma_ext_comp 95       // extension complète
 
 /* annulaire */
 #define HS422_an_inc_comp 470       // inclinaison complète
-#define HS422_an_inc_init 150       // inclinaison initial
+#define HS422_an_inc_init 130       // inclinaison initial
 #define HS422_an_ext_comp 100       // extension complète
 
 /* petit doigt */

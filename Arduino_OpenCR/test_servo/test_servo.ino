@@ -120,7 +120,7 @@ void initial()
 void roche()
 {
   pwm.setPWM(ID_pouce, 0, HS422_po_inc_comp);
-  delay(20);
+  delay(30);
   pwm.setPWM(ID_petitdoigt, 0, HS422_pd_inc_comp);
   pwm.setPWM(ID_annulaire, 0, HS422_an_inc_comp);
   pwm.setPWM(ID_majeur, 0, HS422_ma_inc_comp);
