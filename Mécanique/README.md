@@ -69,4 +69,4 @@ Finalement, les poulies et les tendons peuvent être installés. Les aggraphes p
 ![poulies](https://user-images.githubusercontent.com/92990215/232255831-4517c4ba-6d15-48b9-bab0-9319c1467285.png)
 
 Le point rouge représente le point de fixation des tendons, soit des fils de pêche, et les points bleus représentent le positionnement des aggraphes à papier. <br>
-Ce processus se répete finalement sur la partie arrière des ossements.
+Ce processus se répete finalement sur la partie arrière des ossements. Il est à noter que le positionnement exact de ces éléments peut varier légèrement sans affecter les performances des doigts.
