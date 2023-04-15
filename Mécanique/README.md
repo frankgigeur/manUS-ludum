@@ -1,7 +1,7 @@
 # Documentation-Mécanique
 
 ## Fichiers ['CAD'](./CAD/)
-Les fichiers suivants contiennent les CAD nécessaires à la [fabrication](#Fabrication) des composantes mécaniques du projet.
+Les fichiers suivants contiennent les CAD nécessaires à la [fabrication](#Fabrication des composantes) des composantes mécaniques du projet.
 
 - [ ]  [`Doigts`](./CAD/Doigts/), [`Paume`](./CAD/Paume%20et%20poignet//), [`Poignet`](./CAD/Paume%20et%20poignet//) <br>
 - [ ]  [`Ligaments`](./CAD/Doigts//) <br>
