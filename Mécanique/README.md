@@ -22,9 +22,9 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 2. Impression de la paume et de son support de type poignet dans le dossier [`Paume et poignet`](./CAD/Paume%20et%20poignet//).
 
-3. Impression des poulies de servo moteurs ( **x5** ), du support à moteur, des poulies inserés sur les paliers à billes ( **x12** ) et des supports à arbre ( **x4** ).
+3. Impression des [`poulies de servo moteurs`](./CAD/Moteurs%20support%20et%20poulies/)  ( **x5** ), du [`support à moteurs`](./CAD/Moteurs%20support%20et%20poulies/), des [`poulies inserés sur les paliers à billes`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x12** ) et des [`supports à arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x4** ).
 
-4. Découpe du support supérieur de la main en acrylique à l'aide d'une découpeuse laser.
+4. Découpe du [`support supérieur de la main`](./CAD/M%C3%A9canisme%20redirection%20fils/) en acrylique à l'aide d'une découpeuse laser.
 
 4. Découpe des ligaments en nylon des différents doigts ( **2 par doigts** ).
 
@@ -32,7 +32,7 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 6. Découpe des fils de pêche ≈ 60cm ( **x10** ).
 
-7. Découpe de la base en acrylique du support de la main à l'aide d'une découpeuse laser. 
+7. Découpe de la [`base`](./CAD/Plaque%20montage/) en acrylique du support de la main à l'aide d'une découpeuse laser. 
 
 ## Liste des matériaux et composantes
 ### **Mécanique**
@@ -59,7 +59,7 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 
 ## Assemblage mécanique
-- [ ] Pour l'assemblage des pièces mécaniques, se fier aux assemblages complets fournis dans le dossier [`Assemblages complets`](./CAD/Assemblages%20complets/) ainsi qu'aux dessins fournis dans le dossier [`Dessins`](./Dessins/).
+- [ ] Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
 
 ## Assemblage électrique
 Assemblage électrique
