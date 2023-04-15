@@ -59,7 +59,7 @@ Pour le montage des doigts, il est nécesaire d'insérer les ligamants aux point
 
 Pour se faire, faire fondre les vis m1.2 aux points cibles et visser par la suite celles-ci avec les ligaments de mica et de nylon. La figure suivante présente le nom des ligaments à utiliser selon la jonction entre les ossements.
 
-![montage doigt index](https://user-images.githubusercontent.com/92990215/232254743-88300a97-06f6-4cc5-a2d7-a04028a713ea.png)
+![nom ligaments](https://user-images.githubusercontent.com/92990215/232256772-1324709a-076f-477b-a915-4e05d39316b6.png)
 
 La jonction MCPP est une superposition de ligaments de mica et de nylon, tandis que la jonction PPMP est seulement un ligament de nylon. Aussi, à noter que cette figure présente le montage de l'index, mais la même procédure s'applique pour tous les autres doigts. <br> <br>
 
