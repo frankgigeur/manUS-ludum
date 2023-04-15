@@ -4,10 +4,10 @@
 ---
 Les fichiers suivants recensent les différents CAD nécessaire à la [fabriquation](#Fabrication) des composantes mécaniques du projet.
 
-- [ ]  [`Doigts`](./CAD/Doigts//)  [ ]  [`Paume`](./CAD/Doigts//) [ ]  [`Poignet`](./CAD/Doigts//) <br>
-- [ ]  [`Support moteur`](./CAD/Doigts//) [ ]  [`Poulies`](./CAD/Doigts//) <br>
+- [ ]  [`Doigts`](./CAD/Doigts//), [`Paume`](./CAD/Doigts//), [`Poignet`](./CAD/Doigts//) <br>
+- [ ]  [`Support moteur`](./CAD/Doigts//), [`Poulies`](./CAD/Doigts//) <br>
 - [ ]  [`Support arbre`](./CAD/Doigts//) <br>
-- [ ]  [`Support supérieur`](./CAD/Doigts//) [ ]  [`Base`](./CAD/Doigts//) <br>
+- [ ]  [`Support supérieur`](./CAD/Doigts//), [`Base`](./CAD/Doigts//) <br>
 - [ ]  [`Ligaments`](./CAD/Doigts//) <br>
 
 
