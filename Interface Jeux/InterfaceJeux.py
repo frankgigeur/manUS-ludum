@@ -23,9 +23,10 @@ import cv2
 class UiManUSludumInterface(object):
 
     # Variable globale du décompte
-    nbDecompte = 5
+    nbDecompte = 8
     count = 0
     start = False
+    gameRunning = False
 
     # Variable globale de statistiques
     AIwin = 0
@@ -48,12 +49,12 @@ class UiManUSludumInterface(object):
         self.centralwidget = QtWidgets.QWidget(ManUS_ludum_Interface)
         self.centralwidget.setObjectName("centralwidget")
 
-        # Thread de communication
-        self.commWorker = CommWorker(comPort="COM8")
+        # Fil d'exécution de la communication
+        self.commWorker = CommWorker(comPort="COM6")
         self.commWorker.start()
         self.commWorker.textReceived.connect(self.showCommMessage)
 
-        # Thread de vision et algorithme
+        # Fil d'exécution de la vision et de l'algorithme de jeux
         self.visionRPC = AlgoRPC()
         self.visionRPC.frameToDisplay.connect(self.rafraichirCam)
         self.visionRPC.roundData.connect(self.showRoundData)
@@ -150,90 +151,81 @@ class UiManUSludumInterface(object):
         self.titreContMain.setAlignment(QtCore.Qt.AlignCenter)
         self.titreContMain.setObjectName("titreContMain")
 
+        # Bouton qui indique à la main de retourner à sa position initiale
+        self.boutonRobotInit = QtWidgets.QPushButton(self.robot)
+        self.boutonRobotInit.setGeometry(QtCore.QRect(35, 105, 280, 85))
+        self.boutonRobotInit.setObjectName("boutonRobotInit")
+        self.boutonRobotInit.clicked.connect(lambda: self.commWorker.sendToArduino("I"))
+
         # Bouton qui indique à la main de jouer roche
         self.boutonRobotRoche = QtWidgets.QPushButton(self.robot)
-        self.boutonRobotRoche.setGeometry(QtCore.QRect(35, 160, 280, 90))
+        self.boutonRobotRoche.setGeometry(QtCore.QRect(35, 195, 280, 85))
         self.boutonRobotRoche.setObjectName("boutonRobotRoche")
         self.boutonRobotRoche.clicked.connect(lambda: self.commWorker.sendToArduino("R"))
 
         # Bouton qui indique à la main de jouer papier
         self.boutonRobotPapier = QtWidgets.QPushButton(self.robot)
-        self.boutonRobotPapier.setGeometry(QtCore.QRect(35, 260, 280, 90))
+        self.boutonRobotPapier.setGeometry(QtCore.QRect(35, 285, 280, 85))
         self.boutonRobotPapier.setObjectName("boutonRobotPapier")
         self.boutonRobotPapier.clicked.connect(lambda: self.commWorker.sendToArduino("P"))
 
         # Bouton qui indique à la main de jouer ciseaux
         self.boutonRobotCiseaux = QtWidgets.QPushButton(self.robot)
-        self.boutonRobotCiseaux.setGeometry(QtCore.QRect(35, 360, 280, 90))
+        self.boutonRobotCiseaux.setGeometry(QtCore.QRect(35, 375, 280, 85))
         self.boutonRobotCiseaux.setObjectName("boutonRobotCiseaux")
         self.boutonRobotCiseaux.clicked.connect(lambda: self.commWorker.sendToArduino("C"))
 
-        # Bouton qui arrête la main sur appui
+        # Bouton qui arrête la main (cold stop des moteurs)
         self.boutonRobotAU = QtWidgets.QPushButton(self.robot)
-        self.boutonRobotAU.setGeometry(QtCore.QRect(35, 460, 280, 90))
+        self.boutonRobotAU.setGeometry(QtCore.QRect(35, 465, 280, 85))
         self.boutonRobotAU.setObjectName("boutonRobotAU")
         self.boutonRobotAU.clicked.connect(lambda: self.commWorker.sendToArduino("A"))
 
-        # Initialisation de la section de contrôle de l'humain
-        self.humain = QtWidgets.QGroupBox(self.centralwidget)
-        self.humain.setGeometry(QtCore.QRect(370, 85, 350, 570))
+        # Initialisation de la section d'affichage des données
+        self.donnees = QtWidgets.QGroupBox(self.centralwidget)
+        self.donnees.setGeometry(QtCore.QRect(370, 85, 350, 570))
         font = QtGui.QFont()
         font.setFamily("Corbel Light")
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
-        self.humain.setFont(font)
-        self.humain.setTitle("")
-        self.humain.setObjectName("humain")
+        self.donnees.setFont(font)
+        self.donnees.setTitle("")
+        self.donnees.setObjectName("donnees")
 
         # Nom de la section (label)
-        self.titreContHum = QtWidgets.QLabel(self.humain)
-        self.titreContHum.setGeometry(QtCore.QRect(10, 10, 330, 90))
-        self.titreContHum.setAutoFillBackground(True)
-        self.titreContHum.setFrameShape(QtWidgets.QFrame.Box)
-        self.titreContHum.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.titreContHum.setLineWidth(2)
-        self.titreContHum.setAlignment(QtCore.Qt.AlignCenter)
-        self.titreContHum.setObjectName("titreContHum")
+        self.titreDonnees = QtWidgets.QLabel(self.donnees)
+        self.titreDonnees.setGeometry(QtCore.QRect(10, 10, 330, 90))
+        self.titreDonnees.setAutoFillBackground(True)
+        self.titreDonnees.setFrameShape(QtWidgets.QFrame.Box)
+        self.titreDonnees.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.titreDonnees.setLineWidth(2)
+        self.titreDonnees.setAlignment(QtCore.Qt.AlignCenter)
+        self.titreDonnees.setObjectName("titreDonnees")
 
-        self.AIlastMoveLabel = QtWidgets.QLabel(self.humain)
-        self.AIlastMoveLabel.setGeometry(QtCore.QRect(35, 130, 280, 90))
+        self.AIlastMoveLabel = QtWidgets.QLabel(self.donnees)
+        self.AIlastMoveLabel.setGeometry(QtCore.QRect(35, 130, 285, 90))
         self.AIlastMoveLabel.setObjectName("AIlastMoveLabel")
 
-        self.AIlastMove = QtWidgets.QLabel(self.humain)
-        self.AIlastMove.setGeometry(QtCore.QRect(35, 175, 280, 90))
+        self.AIlastMove = QtWidgets.QLabel(self.donnees)
+        self.AIlastMove.setGeometry(QtCore.QRect(35, 175, 285, 90))
         self.AIlastMove.setObjectName("AIlastMove")
 
-        self.HumanlastMoveLabel = QtWidgets.QLabel(self.humain)
-        self.HumanlastMoveLabel.setGeometry(QtCore.QRect(35, 230, 280, 90))
+        self.HumanlastMoveLabel = QtWidgets.QLabel(self.donnees)
+        self.HumanlastMoveLabel.setGeometry(QtCore.QRect(35, 230, 285, 90))
         self.HumanlastMoveLabel.setObjectName("HumanlastMoveLabel")
 
-        self.HumanlastMove = QtWidgets.QLabel(self.humain)
-        self.HumanlastMove.setGeometry(QtCore.QRect(35, 275, 280, 90))
+        self.HumanlastMove = QtWidgets.QLabel(self.donnees)
+        self.HumanlastMove.setGeometry(QtCore.QRect(35, 275, 285, 90))
         self.HumanlastMove.setObjectName("HumanlastMove")
 
-        self.gagnantMancheLabel = QtWidgets.QLabel(self.humain)
-        self.gagnantMancheLabel.setGeometry(QtCore.QRect(35, 330, 280, 90))
+        self.gagnantMancheLabel = QtWidgets.QLabel(self.donnees)
+        self.gagnantMancheLabel.setGeometry(QtCore.QRect(35, 330, 285, 90))
         self.gagnantMancheLabel.setObjectName("gagnantMancheLabel")
 
-        self.gagnantManche = QtWidgets.QLabel(self.humain)
-        self.gagnantManche.setGeometry(QtCore.QRect(35, 375, 280, 90))
+        self.gagnantManche = QtWidgets.QLabel(self.donnees)
+        self.gagnantManche.setGeometry(QtCore.QRect(35, 375, 285, 90))
         self.gagnantManche.setObjectName("gagnantManche")
-
-        # Bouton qui indique que l'humain à joué roche
-        #self.boutonHumainRoche = QtWidgets.QPushButton(self.humain)
-        #self.boutonHumainRoche.setGeometry(QtCore.QRect(35, 160, 280, 90))
-        #self.boutonHumainRoche.setObjectName("boutonHumainRoche")
-
-        # Bouton qui indique que l'humain à joué papier
-        #self.boutonHumainPapier = QtWidgets.QPushButton(self.humain)
-        #self.boutonHumainPapier.setGeometry(QtCore.QRect(35, 260, 280, 90))
-        #self.boutonHumainPapier.setObjectName("boutonHumainPapier")
-
-        # Bouton qui indique que l'humain à joué ciseaux
-        #self.boutonHumainCiseaux = QtWidgets.QPushButton(self.humain)
-        #self.boutonHumainCiseaux.setGeometry(QtCore.QRect(35, 360, 280, 90))
-        #self.boutonHumainCiseaux.setObjectName("boutonHumainCiseaux")
 
         # Initialisation de la section Statistiques
         self.statistiques = QtWidgets.QGroupBox(self.centralwidget)
@@ -342,62 +334,84 @@ class UiManUSludumInterface(object):
         QtCore.QMetaObject.connectSlotsByName(ManUS_ludum_Interface)
 
     def showCommMessage(self, messageReceived:str):
+        """
+        Impression à la console de message retourné par l'arduino
+
+        :param messageReceived:
+        :return:
+        """
         print(messageReceived)
 
     def updateWinnerStats(self, gameWinner: str):
-        if gameWinner == "u":
-            #self.Humanwin += 1
-            #self.nbHumWin.display(self.Humanwin)
-            pass
-        elif gameWinner == "m":
-            #self.AIwin += 1
-            #self.nbAiWin.display(self.AIwin)
-            pass
-        else:
-            pass
+        """
+        Rafraîchi l'affichage statistique des victoires
+
+        :param gameWinner:
+        :return:
+        """
+        if self.gameRunning:
+            if gameWinner == "u":
+                self.Humanwin += 1
+                self.nbHumWin.display(self.Humanwin)
+                pass
+            elif gameWinner == "m":
+                self.AIwin += 1
+                self.nbAiWin.display(self.AIwin)
+                pass
+            else:
+                pass
 
     def showRoundData(self, roundDataList:list):
-        if roundDataList[0] == "rock":
-            self.HumanlastMove.setText("Roche")
-            self.nombreR += 1
-        elif roundDataList[0] == "paper":
-            self.HumanlastMove.setText("Papier")
-            self.nombreP += 1
-        elif roundDataList[0] == "scissor":
-            self.HumanlastMove.setText("Ciseaux")
-            self.nombreC += 1
+        """
+        Rafraîchi l'affichage des statistiques selon les informations de la manche
 
-        if roundDataList[1] == "rock":
-            self.commWorker.sendToArduino("R")
-            self.AIlastMove.setText("Roche")
-        elif roundDataList[1] == "paper":
-            self.commWorker.sendToArduino("P")
-            self.AIlastMove.setText("Papier")
-        elif roundDataList[1] == "scissor":
-            self.commWorker.sendToArduino("C")
-            self.AIlastMove.setText("Ciseaux")
+        :param roundDataList:
+        :return:
+        """
+        if self.gameRunning:
+            if roundDataList[0] == "rock":
+                self.HumanlastMove.setText("Roche")
+                self.nombreR += 1
+            elif roundDataList[0] == "paper":
+                self.HumanlastMove.setText("Papier")
+                self.nombreP += 1
+            elif roundDataList[0] == "scissor":
+                self.HumanlastMove.setText("Ciseaux")
+                self.nombreC += 1
 
-        if roundDataList[2] == "User":
-            self.gagnantManche.setText("Vous")
-            self.Humanwin += 1
-            self.nbHumWin.display(self.Humanwin)
-        elif roundDataList[2] == "ManUS":
-            self.gagnantManche.setText("ManUS")
-            self.AIwin += 1
-            self.nbAiWin.display(self.AIwin)
-        elif roundDataList[2] == "Tie":
-            self.gagnantManche.setText("Égalité")
+            if roundDataList[1] == "rock":
+                self.commWorker.sendToArduino("R")
+                self.AIlastMove.setText("Roche")
+            elif roundDataList[1] == "paper":
+                self.commWorker.sendToArduino("P")
+                self.AIlastMove.setText("Papier")
+            elif roundDataList[1] == "scissor":
+                self.commWorker.sendToArduino("C")
+                self.AIlastMove.setText("Ciseaux")
 
-        pourcentR = 100 * self.nombreR / (self.nombreR + self.nombreP + self.nombreC)
-        self.pourcentRoche.display(pourcentR)
+            if roundDataList[2] == "User":
+                self.gagnantManche.setText("Vous")
+            elif roundDataList[2] == "ManUS":
+                self.gagnantManche.setText("ManUS")
+            elif roundDataList[2] == "Tie":
+                self.gagnantManche.setText("Égalité")
 
-        pourcentP = 100 * self.nombreP / (self.nombreR + self.nombreP + self.nombreC)
-        self.pourcentPapier.display(pourcentP)
+            pourcentR = 100 * self.nombreR / (self.nombreR + self.nombreP + self.nombreC)
+            self.pourcentRoche.display(pourcentR)
 
-        pourcentC = 100 * self.nombreC / (self.nombreR + self.nombreP + self.nombreC)
-        self.pourcentCiseaux.display(pourcentC)
+            pourcentP = 100 * self.nombreP / (self.nombreR + self.nombreP + self.nombreC)
+            self.pourcentPapier.display(pourcentP)
+
+            pourcentC = 100 * self.nombreC / (self.nombreR + self.nombreP + self.nombreC)
+            self.pourcentCiseaux.display(pourcentC)
 
     def rafraichirCam(self, frametodisplay):
+        """
+        Rafraîchi l'affichage de la caméra à chaque fois que le fil d'exécution de la vision émet des données
+
+        :param frametodisplay:
+        :return:
+        """
         image = QtGui.QImage(frametodisplay, frametodisplay.shape[1], \
                              frametodisplay.shape[0], frametodisplay.shape[1] * 3, QtGui.QImage.Format_RGB888).rgbSwapped()
         pix = QtGui.QPixmap(image)
@@ -417,23 +431,24 @@ class UiManUSludumInterface(object):
         self.titre.setText(_translate("ManUS_ludum_Interface", "ManUS ludum"))
         self.boutonInfo.setText(_translate("ManUS_ludum_Interface", "i"))
         self.titreContMain.setText(_translate("ManUS_ludum_Interface", "Contrôle de la main"))
+        self.boutonRobotInit.setText(_translate("ManUS_ludum_Interface", "Position Initiale"))
         self.boutonRobotRoche.setText(_translate("ManUS_ludum_Interface", "Roche"))
         self.boutonRobotPapier.setText(_translate("ManUS_ludum_Interface", "Papier"))
         self.boutonRobotCiseaux.setText(_translate("ManUS_ludum_Interface", "Ciseaux"))
         self.boutonRobotAU.setText(_translate("ManUS_ludum_Interface", "Arrêt d'urgence"))
 
         #self.boutonHumainRoche.setText(_translate("ManUS_ludum_Interface", "Roche"))
-        self.titreContHum.setText(_translate("ManUS_ludum_Interface", "Données de la manche"))
+        self.titreDonnees.setText(_translate("ManUS_ludum_Interface", "Données de la manche"))
         #self.boutonHumainCiseaux.setText(_translate("ManUS_ludum_Interface", "Ciseaux"))
         #self.boutonHumainPapier.setText(_translate("ManUS_ludum_Interface", "Papier"))
-        self.AIlastMoveLabel.setText(_translate("ManUS_ludum_Interface", "Dernier coup de l'AI :"))
+        self.AIlastMoveLabel.setText(_translate("ManUS_ludum_Interface", "Dernier coup de ManUS :"))
         self.HumanlastMoveLabel.setText(_translate("ManUS_ludum_Interface", "Votre dernier coup :"))
         self.gagnantMancheLabel.setText(_translate("ManUS_ludum_Interface", "Gagnant de la manche :"))
 
         self.boutonStatsReset.setText(_translate("ManUS_ludum_Interface", "Réinitialisation"))
         self.titreStats.setText(_translate("ManUS_ludum_Interface", "Statistiques de jeux"))
-        self.statsAIwin.setText(_translate("ManUS_ludum_Interface", "Nombre de partie gagnée par ManUS :"))
-        self.statsHumWin.setText(_translate("ManUS_ludum_Interface", "Nombre de partie que vous avez gagnée :"))
+        self.statsAIwin.setText(_translate("ManUS_ludum_Interface", "Nombre de manche gagnée par ManUS :"))
+        self.statsHumWin.setText(_translate("ManUS_ludum_Interface", "Nombre de manche que vous avez gagnée :"))
         self.statsRoche.setText(_translate("ManUS_ludum_Interface", "% Roche"))
         self.statsPapier.setText(_translate("ManUS_ludum_Interface", "% Papier"))
         self.statsCiseaux.setText(_translate("ManUS_ludum_Interface", "% Ciseaux"))
@@ -449,12 +464,18 @@ class UiManUSludumInterface(object):
         msg = QMessageBox()
         msg.setWindowTitle("Comment jouer?")
         msg.setText("   Pour lancer la partie cliquez sur 'Commencer la partie' .\n"
-                    "   Fiez-vous ensuite au décompte en-bas à droite\n   et jouez votre coup sur 'Ciseaux' .\n")
+                    "   Fiez-vous ensuite au décompte en-bas à droite\n"
+                    "   et jouez votre coup sur 'À vous de jouer' .\n"
+                    "   Vous aurez 2 secondes pour jouer!\n")
         msg.setIcon(QMessageBox.Question)
 
         msg.exec_()
 
     def reinitialisationStats(self):
+        """
+        Réinitialisation des variables et de l'affichage des statistiques
+        :return:
+        """
         self.AIwin = 0
         self.Humanwin = 0
         self.nombreR = 0
@@ -481,29 +502,40 @@ class UiManUSludumInterface(object):
                 self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "En Attente"))
                 self.count = self.nbDecompte
                 self.start = False
-            elif self.count == 5:
+                self.gameRunning = False
+            elif self.count == 8:
                 self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "Prêt?"))
                 self.count = self.count - 1
-            elif self.count == 4:
+                self.commWorker.sendToArduino("I")
+            elif self.count == 7:
                 self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "C'est parti!"))
                 self.count = self.count - 1
-            elif self.count == 3:
+            elif self.count == 6:
                 self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "Roche"))
                 self.count = self.count - 1
-            elif self.count == 2:
+            elif self.count == 5:
                 self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "Papier"))
                 self.count = self.count - 1
-            elif self.count == 1:
+            elif self.count == 4:
                 self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "Ciseaux"))
+                self.count = self.count - 1
+            elif self.count == 3:
+                self.txtDecompte.setText(_translate("ManUS_ludum_Interface", "À vous de jouer!"))
+                self.count = self.count - 1
+                self.gameRunning = True
+            elif self.count == 2:
+                self.count = self.count - 1
+            elif self.count == 1:
                 self.count = self.count - 1
 
     def debut_decompte(self):
         """
-        Fonction qui débute le chronomètre du décompte
+        Fonction qui débute le chronomètre du décompte et réinitialise les variables de jeux
 
         :return:
         """
         self.start = True
+        self.gameRunning = False
         self.count = self.nbDecompte
 
 
@@ -518,6 +550,6 @@ if __name__ == "__main__":
     # Timer pour le décompte
     timer = QTimer()
     timer.timeout.connect(ui.texte_decompte)
-    timer.start(1000)
+    timer.start(750)
 
     sys.exit(app.exec())
