@@ -11,7 +11,7 @@ Les fichiers suivants contiennent les CAD nécessaires à la [fabrication](#Fabr
 
 
 
-## Fabrication
+## Fabrication des composantes
 ![avant bras v1](https://user-images.githubusercontent.com/92990215/232235138-21b190a2-598d-4fa9-a9e3-5926b624a40c.png)
 
 
@@ -22,13 +22,13 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 2. Impression de la paume et de son support de type poignet dans le dossier [`Paume et poignet`](./CAD/Paume%20et%20poignet//).
 
-3. Impression des [`poulies de servo moteurs`](./CAD/Moteurs%20support%20et%20poulies/)  ( **x5** ), du [`support à moteurs`](./CAD/Moteurs%20support%20et%20poulies/), des [`poulies inserés sur les paliers à billes`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x12** ) et des [`supports à arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x4** ).
+3. Impression des [`poulies de servo moteurs`](./CAD/Moteurs%20support%20et%20poulies/)  ( **x5** ), du [`support à moteurs`](./CAD/Moteurs%20support%20et%20poulies/), des [`poulies inserés sur les paliers à billes`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x12** ) et des [`supports à arbre types 1 et 2`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x4 chaque** ).
 
 4. Découpe du [`support supérieur de la main`](./CAD/M%C3%A9canisme%20redirection%20fils/) en acrylique à l'aide d'une découpeuse laser.
 
-4. Découpe des ligaments en nylon des différents doigts ( **2 par doigts** ).
+4. Découpe des [`ligaments`](./CAD/Ligaments/) en nylon des différents doigts ( **2 par doigts** ) à l'aide de la découpeuse laser.
 
-5. Découpe des ligaments en mica des différents doigts ( **3 par doigts** ) à l'aide de ciseaux.
+5. Découpe des [`ligaments`](./CAD/Ligaments/) en mica des différents doigts ( **3 par doigts** ) à l'aide de ciseaux.
 
 6. Découpe des fils de pêche ≈ 60cm ( **x10** ).
 
@@ -50,13 +50,6 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 - [ ] &nbsp;Fil de pêche 80 lbs <br>
 - [ ] &nbsp;Goupille (dowel pin) 1/8 x 0.5 po. <br> 
 - [ ] &nbsp;Servomoteur HS-422 Hitec [(Robotshop)](https://ca.robotshop.com/fr/products/hitec-hs-422-servo-motor) <br>
-
-### **Électrique**
-- [ ] &nbsp;Arduino Mega 2560  [(Arduino)](https://ca.robotshop.com/fr/products/hitec-hs-422-servo-motor) <br>
-- [ ] &nbsp;Module PCA9685 [(Adafruit)](https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all) <br>
-- [ ] &nbsp;Connecteur mâle-femelle <br>
-- [ ] &nbsp;Alimentation 12V <br>
-
 
 ## Assemblage mécanique
 Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
