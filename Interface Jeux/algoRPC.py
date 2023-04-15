@@ -1,3 +1,8 @@
+# Code de https://learnopencv.com/playing-rock-paper-scissors-with-ai/
+# Modifié ,adapté et francisé (commentaire) par Audrey Guy 2023-04-17
+
+# Pour entraîner un modèle, dé commenter l'entraînement et le test de détection ainsi que les imports nécessaires
+
 import os
 from statistics import StatisticsError
 
@@ -5,6 +10,9 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+
+
+# Les imports en commentaire sont nécessaires pour l'entraînement du modèle mais inutile pour le fonctionnement normal
 
 import tensorflow as tf
 # from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -22,6 +30,8 @@ from scipy import stats as st
 from collections import deque
 
 from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread
+
+import RPCmarkov
 
 """
 
@@ -321,12 +331,25 @@ class AlgoRPC(QThread):
 
     returnList = []
 
-    model = load_model("rps4_FIRST.h5")
+    markovRPC = RPCmarkov.RPCMarkov()
 
-    # This list will be used to map probabilities to class names, Label names are in alphabetical order.
+    model = load_model("rps4.h5")
+
+    # Cette liste sera utilisée pour cartographier les probabilités aux noms de classe.
     label_names = ['nothing', 'paper', 'rock', 'scissor']
 
     def findout_winner(self, user_move, Computer_move):
+        """
+        Détermine le gagnant de la manche et émet le résultat à l'interface.
+
+        Papier bat Roche
+        Roche bat Ciseaux
+        Ciseaux bat Papier
+
+        :param user_move:
+        :param Computer_move:
+        :return:
+        """
         # All logic below is self-explanatory
         self.returnList.append(user_move)
         self.returnList.append(Computer_move)
@@ -374,6 +397,17 @@ class AlgoRPC(QThread):
             return "Computer"
 
     def send_winner(self, user_score, computer_score):
+        """
+        Vérifie le score final d'une partie et émet le gagnant à l'interface
+
+        u == l'utilisateur a gagné
+        m == ManUS a gagné
+        d == égalité
+
+        :param user_score:
+        :param computer_score:
+        :return:
+        """
         if user_score > computer_score:
             self.gameWinner.emit("u")
 
@@ -386,44 +420,56 @@ class AlgoRPC(QThread):
         return True
 
     cap = cv2.VideoCapture(0)
-    box_size = 234  # ne pas changer, sinon ça crash...
+    box_size = 234  # ne pas changer, sinon ça plante...
 
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))    # 640
 
-    # Specify the number of attempts you want. This means best of 5.
-    attempts = 3
+    # Le nombre de manches par partie.
+    attempts = 1
 
-    # Initially the moves will be `nothing`
-    computer_move_name = "nothing"
-    final_user_move = "nothing"
-    user_move = "nothing"
+    # Initialisation des coups
+    computer_move_name = 'nothing'
+    final_user_move = 'nothing'
+    user_move = 'nothing'
 
-    # All scores are 0 at the start.
+    # Initialisation des scores
     computer_score, user_score = 0, 0
 
-    # The default color of bounding box is Blue
+    # Couleur initiale du rectangle de jeux (bleu)
     rect_color = (255, 0, 0)
 
-    # These variables remember if the hand is inside the box or not.
+    # Initialisation de la détection de la main
     hand_inside = False
 
-    # At each iteration we will decrease the total_attempts value by 1
+    # Manche jouée dans la partie
     total_attempts = attempts
 
-    # We will only consider predictions having confidence above this threshold.
+    # Nous ne considérerons que les reconnaissances dont la confiance est supérieure à ce seuil.
     confidence_threshold = 0.70
 
-    # Instead of working on a single prediction, we will take the mode of 5 predictions by using a deque object
-    # This way even if we face a false positive, we would easily ignore it
+    # Au lieu de travailler sur une seule reconnaissance, nous prendrons
+    # le mode de 5 reconnaissances en utilisant un objet deque.
+    # De cette façon, même si nous sommes confrontés à un faux positif, nous l'ignorerons facilement.
     smooth_factor = 5
 
-    # Our initial deque list will have 'nothing' repeated 5 times.
+    # Notre liste initiale de deque aura 'nothing' répété 5 fois.
     de = deque(['nothing'] * 5, maxlen=smooth_factor)
 
     def __init__(self):
+        """
+        Initialisation du fil d'exécution
+
+        """
         QThread.__init__(self)
 
     def run(self):
+        """
+        Boucle du fil, s'exécute en continu.
+        Ici, on prend les captures d'écran, on les traite, on fait les prédictions et les calculs statistiques,
+        on détermine le gagnant et on envoie toutes les informations à l'interface.
+
+        :return:
+        """
 
         while True:
 
@@ -434,30 +480,29 @@ class AlgoRPC(QThread):
 
             frame = cv2.flip(frame, 1)
 
-            # extract the region of image within the user rectangle
+            # extrait la région de l'image dans le rectangle de jeux
             roi = frame[5: self.box_size - 5, self.width - self.box_size + 5: self.width - 5]
 
             roi = np.array([roi]).astype('float64') / 255.0
 
-            # Predict the move made
+            # Reconnaissance du coup
             pred = self.model.predict(roi, verbose=0)
 
-            # Get the index of the predicted class
+            # Trouver le coup dans la liste
             move_code = np.argmax(pred[0])
-
-            # Get the class name of the predicted class
             self.user_move = self.label_names[move_code]
 
-            # Get the confidence of the predicted class
+            # Trouver la confiance de la reconnaissance
             prob = np.max(pred[0])
 
-            # Make sure the probability is above our defined threshold
+            # Vérifie si la probabilité est supérieure au seuil défini
             if prob >= self.confidence_threshold:
 
-                # Now add the move to deque list from left
+                # Maintenant, ajoutez le déplacement vers la liste de deque à partir de la gauche
                 self.de.appendleft(self.user_move)
 
-                # Get the mode i.e. which class has occurred more frequently in the last 5 moves.
+                # Obtenez le mode, c'est-à-dire quelle classe s'est produite
+                # le plus fréquemment au cours des 5 derniers mouvements.
                 try:
                     self.final_user_move = str(st.mode(self.de, keepdims=True)[0][0])
 
@@ -465,24 +510,25 @@ class AlgoRPC(QThread):
                     print('Stats error')
                     continue
 
-                # If nothing is not true and hand_inside is False then proceed.
-                # Basically the hand_inside variable is helping us to not repeatedly predict during the loop
-                # So now the user has to take his hands out of the box for every new prediction.
+                # Si rien n'est faux et que hand_inside est False, continuez.
+                # La variable hand_inside nous aide à ne pas prédire à plusieurs reprises pendant la boucle
+                # L'utilisateur doit donc sortir ses mains de la boîte pour chaque nouvelle reconnaissance.
 
                 if self.final_user_move != "nothing" and self.hand_inside == False:
 
-                    # Set hand inside to True
                     self.hand_inside = True
 
-                    # Get Computer's move and then get the winner.
-                    self.computer_move_name = choice(['rock', 'paper', 'scissor'])
+                    # Obtenez le mouvement de l'ordinateur, puis obtenez le gagnant.
+                    self.computer_move_name = choice(['rock', 'paper', 'scissor'])  # Si on veut que l'ordinateur joue aléatoirement
+                    # self.computer_move_name = self.markovRPC.play(self.user_move) # Si on veut que l'ordinateur joue avec un algorithme de chaîne de Markov
                     winner = self.findout_winner(str(self.final_user_move), self.computer_move_name)
 
-                    # Subtract one attempt
                     self.total_attempts -= 1
 
-                    # If winner is computer then it gets points and vice versa.
-                    # We're also changing the color of rectangle based on who wins the round.
+                    # Si le gagnant est l'ordinateur, il obtient des points et vice versa.
+                    # Nous modifions également la couleur du rectangle en fonction du vainqueur de la manche.
+                    # Bleu = en attente ; Blanc = égalité
+                    # Rouge = défaite pour l'humain ; Vert = victoire pour l'humain
 
                     if winner == "Computer":
                         self.computer_score += 1
@@ -495,43 +541,44 @@ class AlgoRPC(QThread):
                     elif winner == "Tie":
                         self.rect_color = (255, 250, 255)
 
-                    # If all the attempts are up then find our the winner
+                    # Si toutes les tentatives sont terminées, trouvez notre gagnant
                     if self.total_attempts == 0:
 
                         play_again = self.send_winner(self.user_score, self.computer_score)
 
-                        # If the user pressed Enter then restart the game by re-initializing all variables
+                        # Redémarrez le jeu en réinitialisant toutes les variables une fois le gagnant envoyé
                         if play_again:
                             self.user_score, self.computer_score, self.total_attempts = 0, 0, self.attempts
 
-                        # Otherwise quit the program.
+                        # S'il y a un problème dans l'envoie, la boucle est brisée
                         else:
                             break
 
-                # If class is nothing then hand_inside becomes False
+                # Si la classe n'est rien, alors hand_inside devient False
                 elif self.final_user_move == 'nothing':
                     self.hand_inside = False
                     self.rect_color = (255, 0, 0)
 
-            # This is where all annotation is happening.
+            # On écrit ici les étiquettes que l'on veut afficher sur le feedback de la caméra
+            moveToShow = "rien"
+            if self.final_user_move == "rock":
+                moveToShow = "roche"
+            elif self.final_user_move == "paper":
+                moveToShow = "papier"
+            elif self.final_user_move == "scissor":
+                moveToShow = "ciseaux"
+            else:
+                pass
 
-            cv2.putText(frame, "Your Move: " + self.final_user_move,
+            cv2.putText(frame, "Votre coup: " + moveToShow,
                 (420, 270), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
-
-            #cv2.putText(frame, "Computer's Move: " + self.computer_move_name,
-            #    (2, 270), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
-
-            #cv2.putText(frame, "Your Score: " + str(self.user_score),
-            #    (420, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
-            #cv2.putText(frame, "Computer Score: " + str(self.computer_score),
-            #    (2, 300), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
-
-            cv2.putText(frame, "Attempts left: {}".format(self.total_attempts), (25, 50), cv2.FONT_HERSHEY_COMPLEX, 0.7,
-                (100, 2, 255), 1, cv2.LINE_AA)
 
             cv2.rectangle(frame, (self.width - self.box_size, 0), (self.width, self.box_size), self.rect_color, 2)
 
+            # On envoie l'image à afficher à l'interface pour éviter les conflits
             self.frameToDisplay.emit(frame)
+
+            # Pause pour réguler le taux d'affichage à 120 fps
             self.msleep(1000//120)
 
     def kill(self):
