@@ -35,7 +35,6 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 7. Découpe de la [`base`](./CAD/Plaque%20montage/) en acrylique du support de la main à l'aide d'une découpeuse laser. 
 
 ## Liste des matériaux et composantes
-### **Mécanique**
 - [ ] &nbsp;Vis autoperçantes M1.2 x 3mm <br>
 - [ ] &nbsp;Vis M3 x 20mm <br>
 - [ ] &nbsp;Vis M3 x 45mm <br>
@@ -44,7 +43,7 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 - [ ] &nbsp;12 x 12 x 1/8 po. Acrylique <br>
 - [ ] &nbsp;Feuille de nylon cordura 1000D [(Club Tissu)](https://www.clubtissus.com/fr/nylon-cordura-1000d-noir?fbclid=IwAR1-LkjzjMgMWKu80fnkrolP66I-jkD7ACOhfdXqo_PhgQrl8uaRKlY1G78) <br>
 - [ ] &nbsp;Mica plastique transparent 20 ga (Club Tissu) <br>
-- [ ] &nbsp;Agraphe à papier <br>
+- [ ] &nbsp;Aggraphe à papier <br>
 - [ ] &nbsp;Arbre de métal 5mm x 100mm [(Amazon)](https://www.amazon.ca/dp/B01B27MJC6?psc=1&ref=ppx_yo2ov_dt_b_product_details&fbclid=IwAR362ei__UgU11dEIUVBtTV-3JzH9szivByOdhoxnguKB56Yidi5-6fRLzg) <br>
 - [ ] &nbsp;Bearing à billes 5mm x 11mm x 4mm [(Amazon)](https://www.amazon.ca/dp/B07GBTWLCZ?ref=ppx_yo2ov_dt_b_product_details&th=1&fbclid=IwAR22SOt6oHsRRFlgVRrsB5KiavJjqLkp366aq2QIwt-hIwIwVPaSqANGHF4) <br>
 - [ ] &nbsp;Fil de pêche 80 lbs <br>
@@ -58,7 +57,7 @@ Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](
 Pour le montage des doigts, il est nécesaire d'insérer les ligamants aux points d'insertion anatomique selon la figure suivante:
 ![exemple ligament](https://user-images.githubusercontent.com/92990215/232253651-91426f68-5720-48be-8098-8d6ce0e7ebe7.png)
 
-Pour se faire, faire fondre les vis m1.2 aux points cibles et visser par la suite celles-ci avec les ligaments de mica et de nylon. La figure suivante présente le nom des ligaments a utiliser selon la jonction entre les ossements.
+Pour se faire, faire fondre les vis m1.2 aux points cibles et visser par la suite celles-ci avec les ligaments de mica et de nylon. La figure suivante présente le nom des ligaments à utiliser selon la jonction entre les ossements.
 
 ![montage doigt index](https://user-images.githubusercontent.com/92990215/232254743-88300a97-06f6-4cc5-a2d7-a04028a713ea.png)
 
@@ -68,5 +67,5 @@ Finalement, les poulies et les tendons peuvent être installés. Les aggraphes p
 
 ![poulies](https://user-images.githubusercontent.com/92990215/232255831-4517c4ba-6d15-48b9-bab0-9319c1467285.png)
 
-Le point rouge représente le point de fixation des tendons, soit des fils de pêche, et les points bleus représentent le positionnement des aggraphes à papier. <br>
+Le point rouge représente le point de fixation des tendons, soit des fils de pêche, et les points bleus représentent le positionnement des aggraphes à papier. <br> <br>
 Ce processus se répete finalement sur la partie arrière des ossements. Il est à noter que le positionnement exact de ces éléments peut varier légèrement sans affecter les performances des doigts.
