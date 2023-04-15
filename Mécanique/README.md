@@ -1,7 +1,7 @@
 # Documentation-Mécanique
 
 ## Fichier CAD
-Les fichiers suivants recensent les différents CAD nécessaire à la [fabriquation](#Fabrication) des composantes mécaniques du projet.
+Les fichiers suivants recensent les différents CAD nécessaire à la [fabrication](#Fabrication) des composantes mécaniques du projet.
 
 - [ ]  [`Doigts`](./CAD/Doigts//), [`Paume`](./CAD/Doigts//), [`Poignet`](./CAD/Doigts//) <br>
 - [ ]  [`Ligaments`](./CAD/Doigts//) <br>
@@ -19,19 +19,19 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 1. Impression des doigts ( **x5** ) en PLA à l'aide d'une imprimante 3D.
 
-2. Impression de la paume et de son support de type poignet à l'aide d'une imprimante 3D.
+2. Impression de la paume et de son support de type poignet.
 
 3. Impression des poulies de servo moteurs ( **x5** ), du support à moteur, des poulies inserés sur les paliers à billes ( **x12** ) et des supports à arbre ( **x4** ).
 
-4. Découper le support supérieur de la main en acrylique à l'aide d'une découpeuse laser.
+4. Découpe du support supérieur de la main en acrylique à l'aide d'une découpeuse laser.
 
-4. Découper les ligaments en nylon des différents doigts ( 2 par doigts ) à l'aide d'une découpeuse laser.
+4. Découpe des ligaments en nylon des différents doigts ( **2 par doigts** ).
 
-5. Découper les ligaments en mica des différents doigts ( 3 par doigts ) à l'aide de ciseaux.
+5. Découpe des ligaments en mica des différents doigts ( **3 par doigts** ) à l'aide de ciseaux.
 
-6. Découper les fils de pêche ≈ 60cm ( **x10** ).
+6. Découpe des fils de pêche ≈ 60cm ( **x10** ).
 
-7. Découper la base en acrylique du support de la main à l'aide d'une découpeuse laser. 
+7. Découpe de la base en acrylique du support de la main à l'aide d'une découpeuse laser. 
 
 ## Liste des matériaux et composantes
 ### **Mécanique**
