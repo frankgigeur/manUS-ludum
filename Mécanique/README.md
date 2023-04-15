@@ -15,7 +15,7 @@ Les fichiers suivants contiennent les CAD nécessaires à la [fabrication](#Fabr
 ![avant bras v1](https://user-images.githubusercontent.com/92990215/232235138-21b190a2-598d-4fa9-a9e3-5926b624a40c.png)
 
 
-Le montage des composantes mécaniques nécessite l'accès à **une découpeuse laser**, **une imprimante 3D** et d'un **fer à souder**. 
+La fabrication des composantes du projet nécessite l'accès à **une découpeuse laser**, **une imprimante 3D** et d'un **fer à souder**. 
 Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécaniques du projets selon les étapes suivantes:
 
 1. Impression des doigts du dossier [`Doigts`](./CAD/Doigts/) en PLA à l'aide d'une imprimante 3D.
@@ -68,7 +68,4 @@ Pour le montage des doigts, il est nécesaire d'insérer les ligamants aux point
 Pour se faire, faire fondre les vis m1.2 aux points cibles et viser par la suite celles-ci avec les ligaments de mica et de nylon. La figure suivante présente le nom des ligaments a utiliser selon la jonction entre les ossements.
 
 À noter que cette figure présente le montage de l'index, mais la même procédure s'applique pour tous les doigts.
-
-## Assemblage électrique
-Assemblage électrique
 
