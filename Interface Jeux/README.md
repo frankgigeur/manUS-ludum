@@ -44,9 +44,11 @@ S'il y a des erreurs de compilation, fiez-vous aux messages d'erreurs de la cons
 # Comment démarrer l'interface
 Pour lancer et ou modifier l'interface, le fichier de code est InterfaceJeux.py .
 Pour démarrer l'interface il suffit, dans PyCharm, d'appuyer sur le bouton "Run".
+
 ![image](https://user-images.githubusercontent.com/78489554/232337099-de01fa02-72ee-4455-853a-f669517a608c.png)
 
 L'interface comprends des boutons de contrôle de la main, une rétroaction temps réel de la caméra, un décompte de jeux et des statistiques.
+
 ![image](https://user-images.githubusercontent.com/78489554/232337570-edd9e586-6d58-49ad-85db-1a51ec508308.png)
 
 # Comment fonctionne la reconnaissance visuelle
@@ -54,6 +56,7 @@ Pour entraîner un nouveau modèle de reconnaissance visuelle, utilisez le fichi
 Dans ce fichier, en vous fiant aux commentaires, vous serez en mesure de changer les différents paramètres du modèle
 et d'entraîner votre propre modèle. Ensuite, dans le fichier algoRPC du dossier principal, vous n'aurez qu'à changer 
 le nom du modèle à télécharger et à vous assurer que le dit modèle se trouve dans le dossier.
+
 ![image](https://user-images.githubusercontent.com/78489554/232338412-ab952e2f-910b-4119-87b0-f522b5ded0c7.png)
 
 # Comment fonctionne l'algorithme décisionnel de jeux
@@ -63,5 +66,6 @@ de type chaînes de Markov. Le code responsable des calculs statistiques derrri�
 # Comment fonctionne la communication
 La communication entre l'ordinateur et le microcontrôleur Arduino se fait par série avec le fichier CommWorker.py
 Ce code produit une rétroaction à la console permettant à l'utilisateur de comprendre les commandes envoyées à la main.
+
 ![image](https://user-images.githubusercontent.com/78489554/232338623-5928d6ce-c606-4d40-a7b0-26c76b70a1f0.png)
 
