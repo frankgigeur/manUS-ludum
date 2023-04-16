@@ -75,3 +75,8 @@ Finalement, les poulies et les tendons peuvent être installés. Les aggraphes p
 
 Le point rouge représente le point de fixation des tendons, soit des fils de pêche, et les points bleus représentent le positionnement des aggraphes à papier. <br> <br>
 Ce processus se répete finalement sur la partie arrière des ossements. Il est à noter que le positionnement exact de ces éléments peut varier légèrement sans affecter les performances des doigts.
+
+### Montage des doigts sur la paume
+Une fois les doigts assemblés, il faut les placer sur la paume. Pour se faire, on glisse la goupille (dowel pin) dans le trou situé sur la phalange proximale du doigt de manière à ce que celle-ci dépasse également de chaque côté.
+
+
