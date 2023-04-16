@@ -25,7 +25,6 @@ Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre 
 > Mécanique
 
 ## Table des matières
-* [Main]
 * [Mécanique](/Mécanique#manUS-ludum)
 	* [Fichiers CAD](/Mécanique#Fichier-CAD)
 	* [Comment fabriquer ...](/Mécanique#Fabrication)
