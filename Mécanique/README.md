@@ -53,6 +53,12 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 ## Assemblage mécanique
 Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
 
+![Dessin assemblage](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/Dessin_assemblage.pdf)
+
+![Dessin paume](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/Dessin_paume.pdf)
+
+![Dessin redirection fils](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/Dessin_support_main.pdf)
+
 ### **Montage des doigts**
 Pour le montage des doigts, il est nécesaire d'insérer les ligamants aux points d'insertion anatomique selon la figure suivante:
 ![exemple ligament](https://user-images.githubusercontent.com/92990215/232253651-91426f68-5720-48be-8098-8d6ce0e7ebe7.png)
