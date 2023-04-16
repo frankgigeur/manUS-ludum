@@ -51,7 +51,7 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 
 ## Assemblage mécanique
-Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
+Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/), [images](https://github.com/frankgigeur/manUS-ludum/tree/main/Images) fournies et explications ultérieures.
 
 ![Dessin assemblage](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/Dessin_assemblage.png)
 
@@ -84,3 +84,11 @@ Une fois les doigts assemblés, il faut les placer sur la paume. Pour se faire, 
 Ensuite, on force le doigt avec la goupille dans chacune des positions de la paume pour les doigts correspondants. Une grande force pourrait être nécessaire.
 
 ![finger insert](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/doigt_insertion.png)
+
+### Montage des poulies sur la paume
+
+Se fier à l'image suivante pour le montage des poulies de redirection des fils (agrafes à papier) sur la paume:
+![positions agrafes paume](https://github.com/frankgigeur/manUS-ludum/blob/main/Images/devant.jpg)
+
+
+### Redirection des fils

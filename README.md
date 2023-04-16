@@ -6,37 +6,42 @@
 ## Présentation du projet
 L’objectif du projet est de concevoir la portion mécanique, électrique et informatique d’une main robotisée anthropomorphique pouvant actionner ses doigts pour jouer à roche-papier-ciseau. Une caméra vient en support à la main pour rendre le jeu encore plus interactif et réaliste.
 
-à    
+*Photos/vidéos du projet et de l'équipe*
+
 Les membres de l'équipe sont : <strong>Audrey Guy</strong>, <strong>Nicolaï Boudjack</strong>, <strong>Charles Ouellet</strong> et <strong>Alex Miville Deschênes</strong>.
 
-## Téléchargement du projet
-Décrire ici comment télécharger de git et installer les librairies/packages manquant
+## Téléchargement et démarrage du projet
+Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre machine
 
-1. Première étape
- ```
- espace à copier
- ```
-2. Deuxième étape
+1. Cloner le projet et l'enregistrer sur votre machine
+![image](https://user-images.githubusercontent.com/78489554/232335565-3d9acf02-7ed2-407e-98f2-bc31ae900256.png)
 
-> Mettre un élément en évidence
+2. Suivre les étapes des différentes sections du projet
 
-## Comment démarrer le projet
-Explication sur l'ouverture des fichiers et sur le branchement de l'électronique
+> Interface de jeux et vision
+
+> Électrique
+
+> Mécanique
 
 ## Table des matières
-* [Main]
 * [Mécanique](/Mécanique#manUS-ludum)
 	* [Fichiers CAD](/Mécanique#Fichier-CAD)
-	* [Comment fabriquer ...](/Mécanique#Fabrication)
-		* [Liste des matériaux et composantes](/Mécanique#Liste-des-matériaux-et-composantes)
-		* [Assemblage mécanique](/Mécanique#Assemblage-mécanique)
-		* [Assemblage électrique](/Mécanique#Assemblage-électrique)
+	* [Comment fabriquer ...]()
+		* [Liste des matériaux et composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#liste-des-mat%C3%A9riaux-et-composantes)
+		* [Fabrication des composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#fabrication-des-composantes)
+		* [Assemblage mécanique](/https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#assemblage-m%C3%A9canique)
+*  [Électrique](/Électrique#manUS-ludum)
+	* [Liste des matériaux et composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/%C3%89lectrique#liste-des-mat%C3%A9riaux-et-composantes)
+	* [Assemblage électrique](https://github.com/frankgigeur/manUS-ludum/tree/main/%C3%89lectrique#assemblage-%C3%A9lectrique)
 * [Interface](/Interface%20Jeux#manUS-ludum)
+	* [Logiciels requis](/Interface%20Jeux/README.md#installation-des-logiciels-recommandés)
+	* [Dépendances](/Interface%20Jeux/README.md#Consolidation-des-versions-et-des-dépendances)
 	* [Code de l'interface](/Interface%20Jeux/README.md#Comment-démarrer-linterface)
 	* [Code de communication](/Interface%20Jeux/README.md#Comment-fonctionne-la-communication)
-* [Vision]
-	* [Matériel nécessaire]
-	* [Faire un fichier read me pour l'implémentation du modèle]  
+* [Vision](/Interface%20Jeux#manUS-ludum)
+	* [Matériel nécessaire](/Interface%20Jeux/README.md#Matériel-nécessaire)
+	* [Code de la reconnaissance visuelle](/Interface%20Jeux/README.md#Comment-fonctionne-la-reconnaissance-visuelle)
 * [Arduino](/Arduino_OpenCR#manUS-ludum)
 * [Licence](/README.md#L43)
 
