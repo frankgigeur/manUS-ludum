@@ -42,7 +42,7 @@ Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre 
 * [Vision](/Interface%20Jeux#manUS-ludum)
 	* [Matériel nécessaire](/Interface%20Jeux/README.md#Matériel-nécessaire)
 	* [Code de la reconnaissance visuelle](/Interface%20Jeux/README.md#Comment-fonctionne-la-reconnaissance-visuelle)
-* [Arduino](/Arduino_OpenCR#manUS-ludum)
+* [Arduino](https://github.com/frankgigeur/manUS-ludum/tree/main/Arduino/controle_servo)
 * [Licence](/README.md#L43)
 
 ### Licence MIT
