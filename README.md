@@ -31,7 +31,7 @@ Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre 
 		* [Liste des matériaux et composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#liste-des-mat%C3%A9riaux-et-composantes)
 		* [Fabrication des composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#fabrication-des-composantes)
 		* [Assemblage mécanique](/https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#assemblage-m%C3%A9canique)
-* [Électrique](https://github.com/frankgigeur/manUS-ludum/tree/main/%C3%89lectrique)
+* [Électrique](/Électrique#manUS-ludum)
 	* [Liste des matériaux et composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/%C3%89lectrique#liste-des-mat%C3%A9riaux-et-composantes)
 	* [Assemblage électrique](https://github.com/frankgigeur/manUS-ludum/tree/main/%C3%89lectrique#assemblage-%C3%A9lectrique)
 * [Interface](/Interface%20Jeux#manUS-ludum)
