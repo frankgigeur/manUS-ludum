@@ -6,8 +6,7 @@
 ## Présentation du projet
 L’objectif du projet est de concevoir la portion mécanique, électrique et informatique d’une main robotisée anthropomorphique pouvant actionner ses doigts pour jouer à roche-papier-ciseau. Une caméra vient en support à la main pour rendre le jeu encore plus interactif et réaliste.
 
-![](http://i.imgur.com/OUkLi.gif)
-    
+à    
 Les membres de l'équipe sont : <strong>Audrey Guy</strong>, <strong>Nicolaï Boudjack</strong>, <strong>Charles Ouellet</strong> et <strong>Alex Miville Deschênes</strong>.
 
 ## Téléchargement du projet
