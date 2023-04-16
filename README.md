@@ -55,6 +55,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Photos/vidéos du projet et de l'équipe
 ![gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTBjOGFlOGI5ZGJkNzQ3ZDlmZDVkNGMzMzU3OWM5ZTQ1ODhjYzcyNCZjdD1n/tWTLLkfRvjEuBeBxue/giphy-downsized-large.gif)
 
-![gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2FhYzU1ZTAzY2UwNjFlNmE1NmFkZjNhNGE2MGEyYWQxODBjMTAyNyZjdD1n/uialMVYftFbwDPImRv/giphy-downsized-large.gif)
+![gif](https://media.giphy.com/media/bmK2cM00rTa4C5GZ0S/giphy-downsized-large.gif)
 
 
