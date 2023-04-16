@@ -91,3 +91,4 @@ Se fier à l'image suivante pour le montage des poulies de redirection des fils 
 ![positions agrafes paume](https://github.com/frankgigeur/manUS-ludum/blob/main/Images/devant.jpg)
 
 
+### Redirection des fils
