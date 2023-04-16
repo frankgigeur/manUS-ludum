@@ -19,7 +19,9 @@ Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre 
 2. Suivre les étapes des différentes sections du projet
 
 > Interface de jeux et vision
+
 > Électrique
+
 > Mécanique
 
 ## Table des matières
