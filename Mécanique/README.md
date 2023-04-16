@@ -9,6 +9,21 @@ Les fichiers suivants contiennent les CAD nécessaires à la ['fabrication'](##F
 - [ ]  [`Support arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/), [`Poulies arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/), [`Support supérieur`](./CAD/M%C3%A9canisme%20redirection%20fils/) <br>
 - [ ]  [`Base`](./CAD/Plaque%20montage/) <br>
 
+## Liste des matériaux et composantes
+- [ ] &nbsp;Vis autoperçantes M1.2 x 3mm <br>
+- [ ] &nbsp;Vis M3 x 20mm <br>
+- [ ] &nbsp;Vis M3 x 45mm <br>
+- [ ] &nbsp;Vis M5 x 10mm <br>
+- [ ] &nbsp;Vis M5 x 50mm <br>
+- [ ] &nbsp;12 x 12 x 1/8 po. Acrylique <br>
+- [ ] &nbsp;Feuille de nylon cordura 1000D [(Club Tissu)](https://www.clubtissus.com/fr/nylon-cordura-1000d-noir?fbclid=IwAR1-LkjzjMgMWKu80fnkrolP66I-jkD7ACOhfdXqo_PhgQrl8uaRKlY1G78) <br>
+- [ ] &nbsp;Mica plastique transparent 20 ga (Club Tissu) <br>
+- [ ] &nbsp;Aggraphe à papier <br>
+- [ ] &nbsp;Arbre de métal 5mm x 100mm [(Amazon)](https://www.amazon.ca/dp/B01B27MJC6?psc=1&ref=ppx_yo2ov_dt_b_product_details&fbclid=IwAR362ei__UgU11dEIUVBtTV-3JzH9szivByOdhoxnguKB56Yidi5-6fRLzg) <br>
+- [ ] &nbsp;Bearing à billes 5mm x 11mm x 4mm [(Amazon)](https://www.amazon.ca/dp/B07GBTWLCZ?ref=ppx_yo2ov_dt_b_product_details&th=1&fbclid=IwAR22SOt6oHsRRFlgVRrsB5KiavJjqLkp366aq2QIwt-hIwIwVPaSqANGHF4) <br>
+- [ ] &nbsp;Fil de pêche 80 lbs <br>
+- [ ] &nbsp;Goupille (dowel pin) 1/8 x 0.5 po. <br> 
+- [ ] &nbsp;Servomoteur HS-422 Hitec [(Robotshop)](https://ca.robotshop.com/fr/products/hitec-hs-422-servo-motor) <br>
 
 
 ## Fabrication des composantes
@@ -34,21 +49,6 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 7. Découpe de la [`base`](./CAD/Plaque%20montage/) en acrylique du support de la main à l'aide d'une découpeuse laser. 
 
-## Liste des matériaux et composantes
-- [ ] &nbsp;Vis autoperçantes M1.2 x 3mm <br>
-- [ ] &nbsp;Vis M3 x 20mm <br>
-- [ ] &nbsp;Vis M3 x 45mm <br>
-- [ ] &nbsp;Vis M5 x 10mm <br>
-- [ ] &nbsp;Vis M5 x 50mm <br>
-- [ ] &nbsp;12 x 12 x 1/8 po. Acrylique <br>
-- [ ] &nbsp;Feuille de nylon cordura 1000D [(Club Tissu)](https://www.clubtissus.com/fr/nylon-cordura-1000d-noir?fbclid=IwAR1-LkjzjMgMWKu80fnkrolP66I-jkD7ACOhfdXqo_PhgQrl8uaRKlY1G78) <br>
-- [ ] &nbsp;Mica plastique transparent 20 ga (Club Tissu) <br>
-- [ ] &nbsp;Aggraphe à papier <br>
-- [ ] &nbsp;Arbre de métal 5mm x 100mm [(Amazon)](https://www.amazon.ca/dp/B01B27MJC6?psc=1&ref=ppx_yo2ov_dt_b_product_details&fbclid=IwAR362ei__UgU11dEIUVBtTV-3JzH9szivByOdhoxnguKB56Yidi5-6fRLzg) <br>
-- [ ] &nbsp;Bearing à billes 5mm x 11mm x 4mm [(Amazon)](https://www.amazon.ca/dp/B07GBTWLCZ?ref=ppx_yo2ov_dt_b_product_details&th=1&fbclid=IwAR22SOt6oHsRRFlgVRrsB5KiavJjqLkp366aq2QIwt-hIwIwVPaSqANGHF4) <br>
-- [ ] &nbsp;Fil de pêche 80 lbs <br>
-- [ ] &nbsp;Goupille (dowel pin) 1/8 x 0.5 po. <br> 
-- [ ] &nbsp;Servomoteur HS-422 Hitec [(Robotshop)](https://ca.robotshop.com/fr/products/hitec-hs-422-servo-motor) <br>
 
 ## Assemblage mécanique
 Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
