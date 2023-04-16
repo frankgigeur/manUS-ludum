@@ -53,8 +53,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Photos/vidéos du projet et de l'équipe
-![gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTBjOGFlOGI5ZGJkNzQ3ZDlmZDVkNGMzMzU3OWM5ZTQ1ODhjYzcyNCZjdD1n/tWTLLkfRvjEuBeBxue/giphy-downsized-large.gif)
-
-![gif](https://media.giphy.com/media/bmK2cM00rTa4C5GZ0S/giphy-downsized-large.gif)
+![gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTBjOGFlOGI5ZGJkNzQ3ZDlmZDVkNGMzMzU3OWM5ZTQ1ODhjYzcyNCZjdD1n/tWTLLkfRvjEuBeBxue/giphy-downsized-large.gif) &nbsp; &nbsp;![gif](https://media.giphy.com/media/bmK2cM00rTa4C5GZ0S/giphy-downsized-large.gif)
 
 
