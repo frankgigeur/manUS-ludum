@@ -94,7 +94,7 @@ Se fier à l'image suivante pour le montage des poulies de redirection des fils 
 
 ### Redirection des fils
 
-Une fois la main assemblée et les poulies installées, il faut rediriger le fil de pêche vers les servos moteur. La figure suivante montre la redirection du fil pour le petit doigt. Les flèches rouges sont associés au fil du devant et les flèches bleues au fil du derrière. De plus, le fil est enroulé une fois autour des poulies pour s'assurer qu'il ne sorte pas lors du mouvement.
+Une fois la main assemblée et les poulies installées, il faut rediriger le fil de pêche vers les servomoteurs. La figure suivante montre la redirection du fil pour le petit doigt. Les flèches rouges sont associés au fil du devant et les flèches bleues au fil du derrière. De plus, le fil est enroulé une fois autour des poulies pour s'assurer qu'il ne sorte pas lors du mouvement.
 ![CDhd5bslpE](https://user-images.githubusercontent.com/73840473/232349191-cb03d683-7788-44e8-804e-ee25f2dec5cc.png)
 ![image](https://user-images.githubusercontent.com/73840473/232348693-baa05e3e-5d6a-425b-8686-4c460450115f.png)
 
