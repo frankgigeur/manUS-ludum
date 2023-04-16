@@ -69,12 +69,7 @@ Pour se faire, faire fondre les vis m1.2 aux points cibles et visser par la suit
 
 La jonction MCPP est une superposition de ligaments de mica et de nylon, tandis que la jonction PPMP est seulement un ligament de nylon. Aussi, à noter que cette figure présente le montage de l'index, mais la même procédure s'applique pour tous les autres doigts. <br> <br>
 
-Finalement, les poulies et les tendons peuvent être installés. Les aggraphes peuvent donc être pliées et coupées pour ensuite être insérées dans le doigt à l'aide d'un fer à souder. La figure suivante présente le positionnement des poulies.
-
-![poulies](https://user-images.githubusercontent.com/92990215/232255831-4517c4ba-6d15-48b9-bab0-9319c1467285.png)
-
-Le point rouge représente le point de fixation des tendons, soit des fils de pêche, et les points bleus représentent le positionnement des aggraphes à papier. <br> <br>
-Ce processus se répete finalement sur la partie arrière des ossements. Il est à noter que le positionnement exact de ces éléments peut varier légèrement sans affecter les performances des doigts.
+Finalement, les poulies et les tendons peuvent être installés. Les aggraphes peuvent donc être pliées et coupées pour ensuite être insérées dans le doigt à l'aide d'un fer à souder. La figure suivante présente le positionnement des poulies (voir la section [Montage des poulies sur la paume](#montage-des-poulies-sur-la-paume))
 
 ### Montage des doigts sur la paume
 Une fois les doigts assemblés, il faut les placer sur la paume. Pour se faire, on glisse la goupille (dowel pin) dans le trou situé sur la phalange proximale du doigt de manière à ce que celle-ci dépasse également de chaque côté.
