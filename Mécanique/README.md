@@ -18,9 +18,9 @@ Les fichiers suivants contiennent les CAD nécessaires à la ['fabrication'](##F
 La fabrication des composantes du projet nécessite l'accès à **une découpeuse laser**, **une imprimante 3D** et d'un **fer à souder**. 
 Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécaniques du projets selon les étapes suivantes:
 
-1. Impression des doigts du dossier [`Doigts`](./CAD/Doigts/) en PLA à l'aide d'une imprimante 3D.
+1. Impression des doigts du dossier [`Doigts`](./CAD/Doigts/) en PLA à l'aide d'une imprimante 3D (Infill minimum 80%).
 
-2. Impression de la paume et de son support de type poignet dans le dossier [`Paume et poignet`](./CAD/Paume%20et%20poignet//).
+2. Impression de la paume et de son support de type poignet dans le dossier [`Paume et poignet`](./CAD/Paume%20et%20poignet//) (Infill minimum 40%).
 
 3. Impression des [`poulies de servo moteurs`](./CAD/Moteurs%20support%20et%20poulies/)  ( **x5** ), du [`support à moteurs`](./CAD/Moteurs%20support%20et%20poulies/), des [`poulies inserés sur les paliers à billes`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x12** ) et des [`supports à arbre types 1 et 2`](./CAD/M%C3%A9canisme%20redirection%20fils/) ( **x4 chaque** ).
 
@@ -79,4 +79,8 @@ Ce processus se répete finalement sur la partie arrière des ossements. Il est 
 ### Montage des doigts sur la paume
 Une fois les doigts assemblés, il faut les placer sur la paume. Pour se faire, on glisse la goupille (dowel pin) dans le trou situé sur la phalange proximale du doigt de manière à ce que celle-ci dépasse également de chaque côté.
 
+![dowel insert](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/dowel_pin_insert.png)
 
+Ensuite, on force le doigt avec la goupille dans chacune des positions de la paume pour les doigts correspondants. Une grande force pourrait être nécessaire.
+
+![finger insert](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/doigt_insertion.png)
