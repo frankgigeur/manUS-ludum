@@ -87,8 +87,15 @@ Ensuite, on force le doigt avec la goupille dans chacune des positions de la pau
 
 ### Montage des poulies sur la paume
 
-Se fier à l'image suivante pour le montage des poulies de redirection des fils (agrafes à papier) sur la paume:
-![positions agrafes paume](https://github.com/frankgigeur/manUS-ludum/blob/main/Images/devant.jpg)
+Se fier à l'image suivante pour le montage des poulies de redirection des fils (agrafes à papier) sur la paume ainsi que le point de départ du fil de pêche:
+
+![image](https://user-images.githubusercontent.com/73840473/232348058-5f65f2a4-4764-4f30-8342-b98ba0fd3554.png)
 
 
 ### Redirection des fils
+
+Une fois la main assemblée et les poulies installées, il faut rediriger le fil de pêche vers les servos moteur. La figure suivante montre la redirection du fil pour le petit doigt. Les flèches rouges sont associés au fil du devant et les flèches bleues au fil du derrière. 
+![image](https://user-images.githubusercontent.com/73840473/232348680-d7bfa03f-604b-4c3f-80bd-d12d4c30d56b.png)
+![image](https://user-images.githubusercontent.com/73840473/232348693-baa05e3e-5d6a-425b-8686-4c460450115f.png)
+
+Il est à noté que la redirection des fils de chaque doigt suit le même modèle que celui du petit doigt. Il suffit alors de reproduire pour chaque doigt.
