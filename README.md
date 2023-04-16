@@ -6,8 +6,6 @@
 ## Présentation du projet
 L’objectif du projet est de concevoir la portion mécanique, électrique et informatique d’une main robotisée anthropomorphique pouvant actionner ses doigts pour jouer à roche-papier-ciseau. Une caméra vient en support à la main pour rendre le jeu encore plus interactif et réaliste.
 
-*Photos/vidéos du projet et de l'équipe*
-
 Les membres de l'équipe sont : <strong>Audrey Guy</strong>, <strong>Nicolaï Boudjack</strong>, <strong>Charles Ouellet</strong> et <strong>Alex Miville Deschênes</strong>.
 
 ## Téléchargement et démarrage du projet
@@ -53,3 +51,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Photos/vidéos du projet et de l'équipe
+
+
