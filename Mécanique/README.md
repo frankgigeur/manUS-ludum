@@ -4,7 +4,7 @@
 Les fichiers suivants contiennent les CAD nécessaires à la ['fabrication'](##Fabrication%20des%20composantes) des composantes mécaniques du projet.
 
 - [ ]  [`Doigts`](./CAD/Doigts/), [`Paume`](./CAD/Paume%20et%20poignet//), [`Poignet`](./CAD/Paume%20et%20poignet//) <br>
-- [ ]  [`Ligaments`](./CAD/Doigts//) <br>
+- [ ]  [`Ligaments`](./CAD/Ligaments/) <br>
 - [ ]  [`Support moteur`](./CAD/Moteurs%20support%20et%20poulies/), [`Poulies moteurs`](./CAD/Moteurs%20support%20et%20poulies/) <br>
 - [ ]  [`Support arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/), [`Poulies arbre`](./CAD/M%C3%A9canisme%20redirection%20fils/), [`Support supérieur`](./CAD/M%C3%A9canisme%20redirection%20fils/) <br>
 - [ ]  [`Base`](./CAD/Plaque%20montage/) <br>
