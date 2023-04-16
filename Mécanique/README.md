@@ -51,7 +51,7 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 
 
 ## Assemblage mécanique
-Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/), ['images'](https://github.com/frankgigeur/manUS-ludum/tree/main/Images) fournies et explications ultérieures.
+Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/), [images](https://github.com/frankgigeur/manUS-ludum/tree/main/Images) fournies et explications ultérieures.
 
 ![Dessin assemblage](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/Dessin_assemblage.png)
 
