@@ -53,11 +53,11 @@ Les étapes suivantes permmettent de fabriquer l'ensemble des composantes mécan
 ## Assemblage mécanique
 Pour l'assemblage des pièces mécaniques, se fier aux [`assemblages complets`](./CAD/Assemblages%20complets/) fournis ainsi qu'aux [`dessins`](./Dessins/) et explications ultérieures.
 
-![Dessin assemblage](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/Dessin_assemblage.pdf)
+![Dessin assemblage](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/Dessin_assemblage.png)
 
-![Dessin paume](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/Dessin_paume.pdf)
+![Dessin paume](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/Dessin_paume.png)
 
-![Dessin redirection fils](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/Dessin_support_main.pdf)
+![Dessin redirection fils](https://github.com/frankgigeur/manUS-ludum/blob/main/M%C3%A9canique/Dessins/PNG/Dessin_support_main.png)
 
 ### **Montage des doigts**
 Pour le montage des doigts, il est nécesaire d'insérer les ligamants aux points d'insertion anatomique selon la figure suivante:
@@ -75,3 +75,8 @@ Finalement, les poulies et les tendons peuvent être installés. Les aggraphes p
 
 Le point rouge représente le point de fixation des tendons, soit des fils de pêche, et les points bleus représentent le positionnement des aggraphes à papier. <br> <br>
 Ce processus se répete finalement sur la partie arrière des ossements. Il est à noter que le positionnement exact de ces éléments peut varier légèrement sans affecter les performances des doigts.
+
+### Montage des doigts sur la paume
+Une fois les doigts assemblés, il faut les placer sur la paume. Pour se faire, on glisse la goupille (dowel pin) dans le trou situé sur la phalange proximale du doigt de manière à ce que celle-ci dépasse également de chaque côté.
+
+
