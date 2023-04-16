@@ -50,7 +50,7 @@ class UiManUSludumInterface(object):
         self.centralwidget.setObjectName("centralwidget")
 
         # Fil d'exécution de la communication
-        self.commWorker = CommWorker(comPort="COM6")
+        self.commWorker = CommWorker(comPort="COM8")
         self.commWorker.start()
         self.commWorker.textReceived.connect(self.showCommMessage)
 
