@@ -6,7 +6,11 @@
 ## Présentation du projet
 L’objectif du projet est de concevoir la portion mécanique, électrique et informatique d’une main robotisée anthropomorphique pouvant actionner ses doigts pour jouer à roche-papier-ciseau. Une caméra vient en support à la main pour rendre le jeu encore plus interactif et réaliste.
 
+![gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTBjOGFlOGI5ZGJkNzQ3ZDlmZDVkNGMzMzU3OWM5ZTQ1ODhjYzcyNCZjdD1n/tWTLLkfRvjEuBeBxue/giphy-downsized-large.gif) &nbsp; &nbsp;![gif](https://media.giphy.com/media/bmK2cM00rTa4C5GZ0S/giphy-downsized-large.gif)
+
 Les membres de l'équipe sont : <strong>Audrey Guy</strong>, <strong>Nicolaï Boudjack</strong>, <strong>Charles Ouellet</strong> et <strong>Alex Miville Deschênes</strong>.
+
+![GetImage](https://user-images.githubusercontent.com/78489554/232372254-a8a64983-4cb8-42ae-911e-79b456d8dc8b.png)![GetImage (1)](https://user-images.githubusercontent.com/78489554/232372292-4d195d59-ac07-43f4-b150-8bf35b270033.png)![GetImage (2)](https://user-images.githubusercontent.com/78489554/232372322-35cf8720-1cae-44be-9665-9f4b27a8df67.png)![GetImage (3)](https://user-images.githubusercontent.com/78489554/232372365-b27be112-d90e-4293-bcc4-b1b504beb795.png)
 
 ## Téléchargement et démarrage du projet
 Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre machine
@@ -51,8 +55,5 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Photos/vidéos du projet et de l'équipe
-![gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTBjOGFlOGI5ZGJkNzQ3ZDlmZDVkNGMzMzU3OWM5ZTQ1ODhjYzcyNCZjdD1n/tWTLLkfRvjEuBeBxue/giphy-downsized-large.gif) &nbsp; &nbsp;![gif](https://media.giphy.com/media/bmK2cM00rTa4C5GZ0S/giphy-downsized-large.gif)
 
 
