@@ -84,7 +84,7 @@ Ensuite, on force le doigt avec la goupille dans chacune des positions de la pau
 
 Se fier à l'image suivante pour le montage des poulies de redirection des fils (agrafes à papier) sur la paume ainsi que le point de départ du fil de pêche:
 
-![image](https://user-images.githubusercontent.com/73840473/232348058-5f65f2a4-4764-4f30-8342-b98ba0fd3554.png)
+![image](https://github.com/frankgigeur/manUS-ludum/blob/main/Images%20et%20vid%C3%A9os/devant.jpg)
 
 
 ### Redirection des fils
