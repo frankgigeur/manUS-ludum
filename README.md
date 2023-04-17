@@ -10,10 +10,10 @@ L’objectif du projet est de concevoir la portion mécanique, électrique et in
 
 Les membres de l'équipe sont : <strong>Audrey Guy</strong>, <strong>Nicolaï Boudjack</strong>, <strong>Charles Ouellet</strong> et <strong>Alex Miville Deschênes</strong>.
 
-![GetImage](https://user-images.githubusercontent.com/78489554/232373333-de5a11bc-163a-4e7a-8659-fce040d15a68.png)
-![GetImage (1)](https://user-images.githubusercontent.com/78489554/232373363-be4978c9-628c-4862-a14e-ee3475ce86d8.png)
-![GetImage (2)](https://user-images.githubusercontent.com/78489554/232373413-c7806563-2690-4289-8349-f47db9e390f9.png)
-![GetImage (3)](https://user-images.githubusercontent.com/78489554/232373463-b07dded2-d0f0-409e-8429-ce5f1eb7bfaa.png)
+![GetImage](https://user-images.githubusercontent.com/78489554/232373631-4a59c6ea-3329-4609-a553-36db301d3526.png)
+![GetImage (1)](https://user-images.githubusercontent.com/78489554/232373647-91148e81-8543-481e-91bb-7f8fe94e0ebb.png)
+![GetImage (2)](https://user-images.githubusercontent.com/78489554/232373663-3231ef20-82d5-4554-ab5c-dc4197947cb0.png)
+![GetImage (3)](https://user-images.githubusercontent.com/78489554/232373680-2cf7a720-f282-45ac-b1ae-03a8ef7bd66b.png)
 
 ## Téléchargement et démarrage du projet
 Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre machine
