@@ -31,8 +31,8 @@ Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre 
 
 ## Table des matières
 * [Mécanique](/Mécanique#manUS-ludum)
-	* [Fichiers CAD](/Mécanique#Fichier-CAD)
-	* [Comment fabriquer ...]()
+	* [Fichiers CAD](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique/CAD)
+	* [Comment fabriquer ...](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#documentation-m%C3%A9canique)
 		* [Liste des matériaux et composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#liste-des-mat%C3%A9riaux-et-composantes)
 		* [Fabrication des composantes](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#fabrication-des-composantes)
 		* [Assemblage mécanique](https://github.com/frankgigeur/manUS-ludum/tree/main/M%C3%A9canique#assemblage-m%C3%A9canique)
