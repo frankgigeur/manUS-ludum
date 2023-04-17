@@ -13,7 +13,7 @@ Les membres de l'équipe sont : <strong>Audrey Guy</strong>, <strong>Nicolaï Bo
 ![GetImage](https://user-images.githubusercontent.com/78489554/232373631-4a59c6ea-3329-4609-a553-36db301d3526.png)
 ![GetImage (1)](https://user-images.githubusercontent.com/78489554/232373647-91148e81-8543-481e-91bb-7f8fe94e0ebb.png)
 ![GetImage (2)](https://user-images.githubusercontent.com/78489554/232373663-3231ef20-82d5-4554-ab5c-dc4197947cb0.png)
-![GetImage (3)](https://user-images.githubusercontent.com/78489554/232373680-2cf7a720-f282-45ac-b1ae-03a8ef7bd66b.png)
+![GetImage (3)](https://user-images.githubusercontent.com/78489554/232373756-afa9f071-1ad0-4287-8f80-2278a111b036.png)
 
 ## Téléchargement et démarrage du projet
 Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre machine
