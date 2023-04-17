@@ -10,7 +10,10 @@ L’objectif du projet est de concevoir la portion mécanique, électrique et in
 
 Les membres de l'équipe sont : <strong>Audrey Guy</strong>, <strong>Nicolaï Boudjack</strong>, <strong>Charles Ouellet</strong> et <strong>Alex Miville Deschênes</strong>.
 
-![GetImage|250x250](https://user-images.githubusercontent.com/78489554/232372254-a8a64983-4cb8-42ae-911e-79b456d8dc8b.png)![GetImage (1)](https://user-images.githubusercontent.com/78489554/232372292-4d195d59-ac07-43f4-b150-8bf35b270033.png)![GetImage (2)](https://user-images.githubusercontent.com/78489554/232372322-35cf8720-1cae-44be-9665-9f4b27a8df67.png)![GetImage (3)](https://user-images.githubusercontent.com/78489554/232372365-b27be112-d90e-4293-bcc4-b1b504beb795.png)
+![GetImage](https://user-images.githubusercontent.com/78489554/232372254-a8a64983-4cb8-42ae-911e-79b456d8dc8b.png){:height="100px" width="100px"}
+![GetImage (1)](https://user-images.githubusercontent.com/78489554/232372292-4d195d59-ac07-43f4-b150-8bf35b270033.png){:height="100px" width="100px"}
+![GetImage (2)](https://user-images.githubusercontent.com/78489554/232372322-35cf8720-1cae-44be-9665-9f4b27a8df67.png){:height="100px" width="100px"}
+![GetImage (3)](https://user-images.githubusercontent.com/78489554/232372365-b27be112-d90e-4293-bcc4-b1b504beb795.png){:height="100px" width="100px"}
 
 ## Téléchargement et démarrage du projet
 Pour télécharger le projet, il vous suffit de cloner le répertoire sur votre machine
